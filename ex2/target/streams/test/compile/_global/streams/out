@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex2/src/test/scala/test.scala:17:38: value Bool is not a member of Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m                dut.io.sel.poke(true.Bool)[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

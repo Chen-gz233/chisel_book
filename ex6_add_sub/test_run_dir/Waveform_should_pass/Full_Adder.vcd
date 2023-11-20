@@ -1,0 +1,109 @@
+$date
+2023-11-06T15:13+0000
+$end
+$version
+0.2
+$end
+$comment
+
+$end
+$timescale 1ns  $end
+$scope module Full_Adder $end
+ $var wire 1 ! io_in_a $end
+ $var wire 1 " io_in_b $end
+ $var wire 1 # io_in_c $end
+ $var wire 1 $ io_out_c $end
+ $var wire 1 % a_xor_b $end
+ $var wire 1 & clock $end
+ $var wire 1 ' io_out_s $end
+ $var wire 1 ( c_and_axorb $end
+ $var wire 1 ) reset $end
+ $var wire 1 * a_and_b $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+0*
+$end
+#0
+1)
+#1
+1&
+#6
+0&
+0)
+#11
+1&
+#16
+1#
+0&
+1'
+#21
+1&
+#26
+1"
+0#
+0$
+1%
+0&
+1'
+0(
+#31
+1&
+#36
+1#
+1$
+0&
+0'
+1(
+#41
+1&
+#46
+1!
+0"
+0#
+0$
+1%
+0&
+1'
+0(
+0*
+#51
+1&
+#56
+1#
+1$
+0&
+0'
+1(
+#61
+1&
+#66
+1"
+0#
+0%
+0&
+0'
+0(
+1*
+#71
+1&
+#76
+1#
+0&
+1'
+#81
+1&
+#86
+0!
+0"
+0#
+0&

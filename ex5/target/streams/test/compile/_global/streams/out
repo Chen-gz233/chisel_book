@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex5/src/test/scala/test.scala:12:26: value peke is not a member of chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m                dut.io.a.peke(in_a_tb)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex5/src/test/scala/test.scala:13:26: value peke is not a member of chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m                dut.io.b.peke(in_b_tb)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

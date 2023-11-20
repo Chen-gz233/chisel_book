@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mchisel3.internal.ChiselException: Connection between sink (shiftReg_A.shiftReg: Reg[SInt<8>]) and source (shiftReg_A.shiftReg_?: OpResult[UInt<8>]) failed @: Sink (SInt<8>) and Source (UInt<8>) have different types.[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
+[0m[[0m[31merror[0m] [0m[0m	at shiftReg_A.<init>(shiftReg_A.scala:17)[0m
+[0m[[0m[31merror[0m] [0m[0m	at myshiftReg_A$.$anonfun$new$3(shiftReg_A.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) chisel3.internal.ChiselException: Connection between sink (shiftReg_A.shiftReg: Reg[SInt<8>]) and source (shiftReg_A.shiftReg_?: OpResult[UInt<8>]) failed @: Sink (SInt<8>) and Source (UInt<8>) have different types.[0m

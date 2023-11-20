@@ -1,0 +1,456 @@
+$date
+2023-11-07T02:47+0000
+$end
+$version
+0.2
+$end
+$comment
+
+$end
+$timescale 1ns  $end
+$scope module ALU_sub_and $end
+ $var wire 8 ! in_b_env $end
+ $var wire 8 # io_in_a $end
+ $var wire 8 % io_in_b $end
+ $var wire 1 / reset $end
+ $var wire 8 S io_out_result $end
+ $var wire 1 Z Adder_8Module $end
+ $var wire 1 k clock $end
+ $var wire 1 t io_out_zero $end
+ $var wire 1 "( io_out_overflow $end
+ $var wire 1 "+ io_in_sel $end
+  $scope module Adder_8Module.Full_Adder_6 $end
+  $upscope $end
+  $scope module Adder_8Module.Full_Adder $end
+  $upscope $end
+  $scope module Adder_8Module.Full_Adder_7 $end
+  $upscope $end
+  $scope module Adder_8Module.Full_Adder_1 $end
+  $upscope $end
+  $scope module Adder_8Module $end
+   $var wire 8 & io_Sum $end
+   $var wire 2 * io_Sum_hi_hi $end
+   $var wire 1 + io_Cout $end
+   $var wire 1 3 sum_0 $end
+   $var wire 1 4 sum_1 $end
+   $var wire 1 6 sum_2 $end
+   $var wire 1 7 sum_3 $end
+   $var wire 1 8 carry_7 $end
+   $var wire 1 9 sum_4 $end
+   $var wire 1 : carry_8 $end
+   $var wire 1 < sum_5 $end
+   $var wire 1 = sum_6 $end
+   $var wire 1 ? sum_7 $end
+   $var wire 1 @ carry_3 $end
+   $var wire 1 A carry_4 $end
+   $var wire 1 B carry_5 $end
+   $var wire 1 C carry_6 $end
+   $var wire 1 D Full_Adder_1 $end
+   $var wire 1 E Full_Adder_2 $end
+   $var wire 1 F carry_0 $end
+   $var wire 1 H Full_Adder_3 $end
+   $var wire 1 I carry_1 $end
+   $var wire 1 J Full_Adder_4 $end
+   $var wire 1 L carry_2 $end
+   $var wire 1 M Full_Adder_5 $end
+   $var wire 1 O Full_Adder_6 $end
+   $var wire 1 P Full_Adder_7 $end
+   $var wire 2 R io_Sum_lo_hi $end
+   $var wire 1 W Full_Adder $end
+   $var wire 4 [ io_Sum_lo $end
+   $var wire 1 _ io_Cin $end
+   $var wire 8 i io_A $end
+   $var wire 2 n io_Sum_hi_lo $end
+   $var wire 8 p io_B $end
+   $var wire 2 "# io_Sum_lo_lo $end
+   $var wire 4 "/ io_Sum_hi $end
+    $scope module Full_Adder_7 $end
+     $var wire 1 " a_and_b $end
+     $var wire 1 5 io_out_c $end
+     $var wire 1 > a_xor_b $end
+     $var wire 1 r io_out_s $end
+     $var wire 1 y io_in_a $end
+     $var wire 1 z io_in_b $end
+     $var wire 1 { io_in_c $end
+     $var wire 1 } c_and_axorb $end
+    $upscope $end
+    $scope module Full_Adder_3 $end
+     $var wire 1 $ io_out_s $end
+     $var wire 1 ' a_and_b $end
+     $var wire 1 G a_xor_b $end
+     $var wire 1 N io_in_a $end
+     $var wire 1 o io_in_c $end
+     $var wire 1 q io_in_b $end
+     $var wire 1 v c_and_axorb $end
+     $var wire 1 ". io_out_c $end
+    $upscope $end
+    $scope module Full_Adder_2 $end
+     $var wire 1 ( io_out_c $end
+     $var wire 1 , io_out_s $end
+     $var wire 1 Q a_and_b $end
+     $var wire 1 V io_in_c $end
+     $var wire 1 d a_xor_b $end
+     $var wire 1 e io_in_a $end
+     $var wire 1 f io_in_b $end
+     $var wire 1 x c_and_axorb $end
+    $upscope $end
+    $scope module Full_Adder $end
+     $var wire 1 ) a_and_b $end
+     $var wire 1 T a_xor_b $end
+     $var wire 1 U io_out_s $end
+     $var wire 1 X io_out_c $end
+     $var wire 1 a c_and_axorb $end
+     $var wire 1 j io_in_c $end
+     $var wire 1 l io_in_b $end
+     $var wire 1 m io_in_a $end
+    $upscope $end
+    $scope module Full_Adder_4 $end
+     $var wire 1 - a_xor_b $end
+     $var wire 1 K io_out_c $end
+     $var wire 1 ] io_out_s $end
+     $var wire 1 w c_and_axorb $end
+     $var wire 1 "" a_and_b $end
+     $var wire 1 "* io_in_c $end
+     $var wire 1 ", io_in_b $end
+     $var wire 1 "- io_in_a $end
+    $upscope $end
+    $scope module Full_Adder_5 $end
+     $var wire 1 . io_in_a $end
+     $var wire 1 0 io_in_b $end
+     $var wire 1 1 io_in_c $end
+     $var wire 1 b a_and_b $end
+     $var wire 1 g io_out_c $end
+     $var wire 1 "! c_and_axorb $end
+     $var wire 1 ") io_out_s $end
+     $var wire 1 "0 a_xor_b $end
+    $upscope $end
+    $scope module Full_Adder_1 $end
+     $var wire 1 2 c_and_axorb $end
+     $var wire 1 h a_and_b $end
+     $var wire 1 s io_out_s $end
+     $var wire 1 | io_out_c $end
+     $var wire 1 "$ a_xor_b $end
+     $var wire 1 "% io_in_b $end
+     $var wire 1 "& io_in_c $end
+     $var wire 1 "' io_in_a $end
+    $upscope $end
+    $scope module Full_Adder_6 $end
+     $var wire 1 ; a_and_b $end
+     $var wire 1 Y io_in_c $end
+     $var wire 1 \ io_in_a $end
+     $var wire 1 ^ io_in_b $end
+     $var wire 1 ` a_xor_b $end
+     $var wire 1 c io_out_s $end
+     $var wire 1 u io_out_c $end
+     $var wire 1 ~ c_and_axorb $end
+    $upscope $end
+  $upscope $end
+  $scope module Adder_8Module.Full_Adder_2 $end
+  $upscope $end
+  $scope module Adder_8Module.Full_Adder_3 $end
+  $upscope $end
+  $scope module Adder_8Module.Full_Adder_4 $end
+  $upscope $end
+  $scope module Adder_8Module.Full_Adder_5 $end
+  $upscope $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+00
+01
+02
+03
+04
+05
+06
+b00000000 i
+07
+08
+09
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+b00 *
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+b00000000 p
+0P
+0Q
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+b00000000 S
+0j
+0k
+0l
+0m
+0o
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+0y
+0z
+0{
+0|
+0}
+0~
+0"!
+0""
+0"$
+0"%
+0"&
+0"'
+0"(
+0")
+0"*
+0"+
+0",
+0"-
+0".
+0"0
+b00000000 &
+b00000000 #
+b00 "#
+b0000 "/
+b00000000 %
+b00 n
+b00000000 !
+b0000 [
+b00 R
+0"
+0$
+0'
+0(
+0)
+0+
+0,
+0-
+0.
+0/
+$end
+#0
+1t
+1/
+#1
+1k
+#6
+b11 "#
+1"$
+1"%
+1G
+1N
+b11 R
+b00001111 S
+1T
+1U
+b1111 [
+b00000111 !
+b00001000 #
+1$
+1d
+b00000111 %
+b00001111 &
+1f
+b00001000 i
+0k
+1,
+1l
+0/
+b00000111 p
+13
+1s
+14
+0t
+16
+17
+#11
+1k
+#16
+0k
+#21
+1k
+#26
+b11111010 !
+b00001100 #
+0$
+b00000110 %
+b00000110 &
+1'
+0(
+1+
+1,
+1-
+10
+11
+03
+15
+16
+07
+18
+09
+1:
+1>
+1"!
+0@
+1A
+b10 "#
+1B
+1C
+0G
+1"*
+1"+
+1",
+1K
+1".
+b0000 "/
+1"0
+0Q
+b01 R
+b00000110 S
+0T
+0U
+1Y
+b0110 [
+0]
+1^
+1`
+1d
+1e
+0f
+1g
+b00001100 i
+0k
+0l
+b00 n
+0o
+b11111010 p
+1q
+1t
+1u
+0v
+1w
+1z
+1{
+1}
+1~
+#31
+1k
+#36
+0k
+#41
+1k
+#46
+b00000000 !
+b00000010 #
+0$
+b00000000 %
+b00000010 &
+0'
+b00 *
+0+
+0,
+0-
+00
+01
+14
+05
+06
+07
+08
+09
+0:
+0<
+0=
+0>
+0?
+0"!
+0A
+b10 "#
+0B
+1"$
+0C
+0"%
+1"'
+0"(
+0G
+0")
+0"*
+0",
+0K
+0L
+0".
+b0000 "/
+0N
+0"0
+b00 R
+b00000010 S
+0V
+0Y
+b0010 [
+0]
+0^
+0`
+0c
+0d
+0e
+0g
+0h
+b00000010 i
+0k
+b00 n
+b00000000 p
+0q
+0r
+1s
+0u
+0w
+0z
+0{
+0|
+0}
+0~
+#51
+1k
+#56
+b00000000 #
+0"+
+0k

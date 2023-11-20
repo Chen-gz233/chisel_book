@@ -1,0 +1,94 @@
+$date
+2023-11-08T08:17+0000
+$end
+$version
+0.2
+$end
+$comment
+
+$end
+$timescale 1ns  $end
+$scope module Register_2 $end
+ $var wire 4 ! io_out $end
+ $var wire 1 " io_in_clr $end
+ $var wire 4 # io_in_a $end
+ $var wire 1 $ clock $end
+ $var wire 1 % io_in_en $end
+ $var wire 1 & reset $end
+ $var wire 4 ' shiftReg $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+0"
+b0000 #
+0$
+b0000 !
+0%
+0&
+b0000 '
+$end
+#0
+1&
+#1
+1$
+#6
+1"
+b0001 #
+0$
+0&
+#11
+b0001 !
+1$
+b0001 '
+#16
+0$
+#21
+1$
+#26
+0$
+#31
+1$
+#36
+0"
+0$
+#41
+1$
+#46
+0$
+#51
+1$
+#56
+0$
+1%
+#61
+b0010 !
+1$
+b0010 '
+#66
+0$
+#71
+b0011 !
+1$
+b0011 '
+#76
+0$
+#81
+b0100 !
+1$
+b0100 '
+#86
+0$
+#91
+b0101 !
+1$
+b0101 '
+#96
+0$
+#101
+b0110 !
+1$
+b0110 '
+#106
+b0000 #
+0$
+0%

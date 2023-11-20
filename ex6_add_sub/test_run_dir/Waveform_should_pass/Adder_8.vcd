@@ -1,0 +1,252 @@
+$date
+2023-11-06T15:13+0000
+$end
+$version
+0.2
+$end
+$comment
+
+$end
+$timescale 1ns  $end
+$scope module Adder_8 $end
+ $var wire 8 " io_in_a $end
+ $var wire 8 # io_in_b $end
+ $var wire 1 % out_temp2_6 $end
+ $var wire 1 & out_temp2_7 $end
+ $var wire 1 ' out_temp2_8 $end
+ $var wire 1 ( out_temp2_2 $end
+ $var wire 1 ) out_temp2_3 $end
+ $var wire 1 * out_temp2_4 $end
+ $var wire 1 + out_temp2_5 $end
+ $var wire 1 5 out_temp2_0 $end
+ $var wire 1 6 out_temp2_1 $end
+ $var wire 1 8 reset $end
+ $var wire 2 > io_out_hi_lo $end
+ $var wire 2 ? io_out_lo_hi $end
+ $var wire 4 K io_out_lo $end
+ $var wire 2 L io_out_hi_hi_hi $end
+ $var wire 1 _ clock $end
+ $var wire 9 j io_out $end
+ $var wire 3 k io_out_hi_hi $end
+ $var wire 2 l io_out_lo_lo $end
+ $var wire 1 m FA0 $end
+ $var wire 1 n FA2 $end
+ $var wire 1 o FA1 $end
+ $var wire 1 p FA4 $end
+ $var wire 1 q FA3 $end
+ $var wire 1 r FA6 $end
+ $var wire 1 s FA5 $end
+ $var wire 1 t FA7 $end
+ $var wire 5 } io_out_hi $end
+  $scope module FA0 $end
+   $var wire 1 $ io_out_c $end
+   $var wire 1 7 io_out_s $end
+   $var wire 1 Q io_in_c $end
+   $var wire 1 R io_in_b $end
+   $var wire 1 S io_in_a $end
+   $var wire 1 X c_and_axorb $end
+   $var wire 1 Z a_xor_b $end
+   $var wire 1 u a_and_b $end
+  $upscope $end
+  $scope module FA2 $end
+   $var wire 1 . a_xor_b $end
+   $var wire 1 @ io_out_s $end
+   $var wire 1 A a_and_b $end
+   $var wire 1 C io_in_b $end
+   $var wire 1 D io_in_c $end
+   $var wire 1 F io_in_a $end
+   $var wire 1 J io_out_c $end
+   $var wire 1 W c_and_axorb $end
+  $upscope $end
+  $scope module FA1 $end
+   $var wire 1 - io_out_s $end
+   $var wire 1 / a_and_b $end
+   $var wire 1 0 io_in_c $end
+   $var wire 1 1 io_in_a $end
+   $var wire 1 2 io_in_b $end
+   $var wire 1 \ c_and_axorb $end
+   $var wire 1 z io_out_c $end
+   $var wire 1 { a_xor_b $end
+  $upscope $end
+  $scope module FA4 $end
+   $var wire 1 Y io_out_s $end
+   $var wire 1 f io_out_c $end
+   $var wire 1 g a_xor_b $end
+   $var wire 1 h c_and_axorb $end
+   $var wire 1 v io_in_c $end
+   $var wire 1 w io_in_b $end
+   $var wire 1 x io_in_a $end
+   $var wire 1 y a_and_b $end
+  $upscope $end
+  $scope module FA3 $end
+   $var wire 1 B a_xor_b $end
+   $var wire 1 P io_out_s $end
+   $var wire 1 T io_out_c $end
+   $var wire 1 U io_in_b $end
+   $var wire 1 V io_in_a $end
+   $var wire 1 ] io_in_c $end
+   $var wire 1 ` a_and_b $end
+   $var wire 1 i c_and_axorb $end
+  $upscope $end
+  $scope module FA6 $end
+   $var wire 1 ! io_out_c $end
+   $var wire 1 , io_out_s $end
+   $var wire 1 4 a_xor_b $end
+   $var wire 1 G io_in_a $end
+   $var wire 1 H io_in_b $end
+   $var wire 1 I io_in_c $end
+   $var wire 1 N a_and_b $end
+   $var wire 1 ^ c_and_axorb $end
+  $upscope $end
+  $scope module FA5 $end
+   $var wire 1 3 io_out_c $end
+   $var wire 1 9 a_and_b $end
+   $var wire 1 : io_in_c $end
+   $var wire 1 ; io_in_b $end
+   $var wire 1 < io_out_s $end
+   $var wire 1 = io_in_a $end
+   $var wire 1 [ c_and_axorb $end
+   $var wire 1 | a_xor_b $end
+  $upscope $end
+  $scope module FA7 $end
+   $var wire 1 E io_out_s $end
+   $var wire 1 M io_out_c $end
+   $var wire 1 O a_xor_b $end
+   $var wire 1 a io_in_c $end
+   $var wire 1 b c_and_axorb $end
+   $var wire 1 c a_and_b $end
+   $var wire 1 d io_in_a $end
+   $var wire 1 e io_in_b $end
+  $upscope $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+00
+01
+02
+03
+04
+05
+06
+07
+08
+09
+0:
+0;
+0<
+0=
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+b000 k
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+b00000000 #
+0y
+b00000000 "
+0z
+b0000 K
+0{
+0|
+b00 l
+b000000000 j
+b00000 }
+0!
+0$
+0%
+b00 L
+0&
+0'
+0(
+0)
+0*
+b00 ?
+0+
+b00 >
+0,
+0-
+0.
+0/
+$end
+#0
+18
+#1
+1_
+#6
+0B
+b0001 K
+0P
+1R
+1T
+1U
+1V
+1Y
+1Z
+0_
+1`
+b00001000 "
+b00001001 #
+0)
+1*
+b000010001 j
+b01 l
+15
+1v
+17
+08
+b00001 }
+b01 >
+b00 ?
+#11
+1_
+#16
+b00000000 "
+b00000000 #
+0_

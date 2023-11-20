@@ -1,0 +1,14 @@
+[0m[[0m[31merror[0m] [0m[0mchisel3.package$ExpectedChiselTypeException: 'Bool(true)' must be a Chisel type, not hardware[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
+[0m[[0m[31merror[0m] [0m[0m	at Mymodule$$anon$1.$anonfun$sel$1(main.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0m	at chisel3.internal.plugin.package$.autoNameRecursively(package.scala:33)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Mymodule$$anon$1.<init>(main.scala:9)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Mymodule.$anonfun$io$2(main.scala:6)[0m
+[0m[[0m[31merror[0m] [0m[0m	at chisel3.internal.prefix$.apply(prefix.scala:48)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Mymodule.$anonfun$io$1(main.scala:6)[0m
+[0m[[0m[31merror[0m] [0m[0m	at chisel3.internal.plugin.package$.autoNameRecursively(package.scala:33)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Mymodule.<init>(main.scala:6)[0m
+[0m[[0m[31merror[0m] [0m[0m	at myModule$.$anonfun$new$3(main.scala:21)[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) chisel3.package$ExpectedChiselTypeException: 'Bool(true)' must be a Chisel type, not hardware[0m

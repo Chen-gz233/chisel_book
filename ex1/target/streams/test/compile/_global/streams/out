@@ -1,0 +1,10 @@
+[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex1/src/test/scala/test.scala:16:52: value dout is not a member of chisel3.Bundle{val in_1: chisel3.UInt; val in_2: chisel3.UInt; val out_add: chisel3.UInt; val out_sub: chisel3.UInt; val out_mul: chisel3.UInt}[0m
+[0m[[0m[31merror[0m] [0m[0m                println("Add Result is: " + dut.io.dout.peek().toString)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex1/src/test/scala/test.scala:17:52: value dout is not a member of chisel3.Bundle{val in_1: chisel3.UInt; val in_2: chisel3.UInt; val out_add: chisel3.UInt; val out_sub: chisel3.UInt; val out_mul: chisel3.UInt}[0m
+[0m[[0m[31merror[0m] [0m[0m                println("Sub Result is: " + dut.io.dout.peek().toString)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex1/src/test/scala/test.scala:18:52: value dout is not a member of chisel3.Bundle{val in_1: chisel3.UInt; val in_2: chisel3.UInt; val out_add: chisel3.UInt; val out_sub: chisel3.UInt; val out_mul: chisel3.UInt}[0m
+[0m[[0m[31merror[0m] [0m[0m                println("Mul Result is: " + dut.io.dout.peek().toString)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m

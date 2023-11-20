@@ -1,0 +1,93 @@
+$date
+2023-11-17T15:13+0000
+$end
+$version
+0.2
+$end
+$comment
+
+$end
+$timescale 1ns  $end
+$scope module Array_2D $end
+ $var wire 1 ! clock $end
+ $var wire 8 " io_inMatrix_0_0 $end
+ $var wire 8 # io_outMatrix_2_2 $end
+ $var wire 8 $ io_inMatrix_0_2 $end
+ $var wire 8 % io_inMatrix_1_1 $end
+ $var wire 8 & io_inMatrix_2_0 $end
+ $var wire 8 ' io_inMatrix_0_1 $end
+ $var wire 8 ( io_inMatrix_1_0 $end
+ $var wire 8 ) io_outMatrix_0_1 $end
+ $var wire 8 * io_outMatrix_1_0 $end
+ $var wire 8 + io_inMatrix_2_2 $end
+ $var wire 8 , io_outMatrix_0_0 $end
+ $var wire 8 - io_inMatrix_1_2 $end
+ $var wire 8 . io_inMatrix_2_1 $end
+ $var wire 8 / io_outMatrix_2_1 $end
+ $var wire 8 0 io_outMatrix_1_2 $end
+ $var wire 8 1 io_outMatrix_0_2 $end
+ $var wire 8 2 io_outMatrix_2_0 $end
+ $var wire 8 3 io_outMatrix_1_1 $end
+ $var wire 1 4 reset $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+b00000000 +
+b00000000 *
+b00000000 -
+b00000000 ,
+04
+b00000000 '
+b00000000 &
+b00000000 )
+b00000000 (
+b00000000 #
+b00000000 "
+b00000000 %
+b00000000 $
+0!
+b00000000 3
+b00000000 2
+b00000000 /
+b00000000 .
+b00000000 1
+b00000000 0
+$end
+#0
+14
+#1
+1!
+#6
+0!
+b00000100 "
+b00000100 #
+b00000001 $
+b00000100 %
+b00000010 &
+b00000100 '
+b00000011 (
+b00000011 )
+b00000100 *
+b00000100 +
+b00000100 ,
+b00000010 -
+b00000010 .
+b00000010 /
+b00000010 0
+b00000010 1
+b00000001 2
+b00000100 3
+04
+#11
+1!
+#16
+0!
+b00000000 "
+b00000000 $
+b00000000 %
+b00000000 &
+b00000000 '
+b00000000 (
+b00000000 +
+b00000000 -
+b00000000 .

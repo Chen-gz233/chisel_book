@@ -1,0 +1,9 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/chen/ysyx/chisel-book/ex0/target/scala-2.12/ex0_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	helloscala$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex0/target/scala-2.12/classes/helloscala$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	helloscala.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex0/target/scala-2.12/classes/helloscala.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	helloscala$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex0/target/scala-2.12/classes/helloscala$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

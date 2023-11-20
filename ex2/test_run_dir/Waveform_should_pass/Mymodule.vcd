@@ -1,0 +1,50 @@
+$date
+2023-10-30T03:57+0000
+$end
+$version
+0.2
+$end
+$comment
+
+$end
+$timescale 1ns  $end
+$scope module Mymodule $end
+ $var wire 4 ! io_out_mux $end
+ $var wire 1 " io_sel $end
+ $var wire 4 # io_in_1 $end
+ $var wire 4 $ io_in_2 $end
+ $var wire 8 % io_out_cat $end
+ $var wire 1 & reset $end
+ $var wire 1 ' clock $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+b0000 $
+0"
+b0000 #
+b0000 !
+0&
+0'
+b00000000 %
+$end
+#0
+1&
+#1
+1'
+#6
+0&
+0'
+#11
+1'
+#16
+b0000 !
+1"
+b0011 $
+b00000011 %
+0'
+#21
+1'
+#26
+0"
+b0000 $
+0'

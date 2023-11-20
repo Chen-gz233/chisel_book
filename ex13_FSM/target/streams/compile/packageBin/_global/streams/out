@@ -1,0 +1,23 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/ohmychisel_2.13-0.1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	mux4_1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/mux4_1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MyFSM$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/MyFSM$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MyFSM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/MyFSM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FSM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/FSM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	mux4_1$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/mux4_1$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	myModule$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/myModule$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	myModule$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/myModule$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FSM$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/FSM$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MyFSM$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/MyFSM$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	myModule.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/chen/ysyx/chisel-book/ex13_FSM/target/scala-2.13/classes/myModule.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

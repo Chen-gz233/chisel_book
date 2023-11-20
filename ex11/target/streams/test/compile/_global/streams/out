@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex11/src/test/scala/test_shift_A.scala:12:30: value unary_+ is not a member of chisel3.SInt[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean unary_-, unary_-%, or unary_~?[0m
+[0m[[0m[31merror[0m] [0m[0m                val in1_tb = +127.S[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

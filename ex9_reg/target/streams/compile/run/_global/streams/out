@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module mux4_1]  Reference io is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : io.out <= mux(_T, _io_out_T, mux(_T_1, _io_out_T_1, mux(_T_2, _io_out_T_2, mux(_T_3, _io_out_T_3, VOID))))[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) firrtl.passes.CheckInitialization$RefNotInitializedException:  : [module mux4_1]  Reference io is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : io.out <= mux(_T, _io_out_T, mux(_T_1, _io_out_T_1, mux(_T_2, _io_out_T_2, mux(_T_3, _io_out_T_3, VOID))))[0m
