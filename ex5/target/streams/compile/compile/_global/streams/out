@@ -1,4 +1,0 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/chen/ysyx/chisel-book/ex5/src/main/scala/main.scala:16:12: Pattern definition introduces Unit-valued member of FuncModule; consider wrapping it in `locally { ... }`.[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val io.out = adder(io.a,io.b)[0m
-[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

@@ -1,4 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex0/src/main/scala/main.scala:18:9: myReg is already defined as value myReg[0m
-[0m[[0m[31merror[0m] [0m[0m    val myReg = RegInit(0.U(12.W))[0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m

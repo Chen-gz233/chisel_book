@@ -1,7 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mchisel3.internal.ChiselException: Connection between sink (Adder_8.io.out: IO[UInt<1>[9]]) and source (Adder_8.io_out_?: OpResult[UInt<9>]) failed @: Sink (UInt<1>[9]) and Source (UInt<9>) have different types.[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
-[0m[[0m[31merror[0m] [0m[0m	at Adder_8.<init>(Adder_8.scala:69)[0m
-[0m[[0m[31merror[0m] [0m[0m	at MyModule$.$anonfun$new$35(Adder_8.scala:75)[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) chisel3.internal.ChiselException: Connection between sink (Adder_8.io.out: IO[UInt<1>[9]]) and source (Adder_8.io_out_?: OpResult[UInt<9>]) failed @: Sink (UInt<1>[9]) and Source (UInt<9>) have different types.[0m

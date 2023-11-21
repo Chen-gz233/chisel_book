@@ -1,9 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex15_2d_ARRAY/src/main/scala/main.scala:15:17: inferred type arguments [List[chisel3.UInt]] do not conform to method apply's type parameter bounds [T <: chisel3.Data][0m
-[0m[[0m[31merror[0m] [0m[0m    val stage = RegInit(idle)[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex15_2d_ARRAY/src/main/scala/main.scala:15:25: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : List[chisel3.UInt][0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    val stage = RegInit(idle)[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

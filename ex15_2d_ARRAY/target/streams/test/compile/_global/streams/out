@@ -1,6 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex15_2d_ARRAY/src/test/scala/test.scala:20:38: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Seq[Seq[Int]][0m
-[0m[[0m[31merror[0m] [0m[0m required: chisel3.Vec[chisel3.Vec[chisel3.UInt]][0m
-[0m[[0m[31merror[0m] [0m[0m                dut.io.inMatrix.poke(inputMatrix)[0m
-[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m

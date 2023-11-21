@@ -1,8 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex10_fifo/src/test/scala/test_RAM_2.scala:8:15: not enough arguments for constructor RAM_2: (n: Int): RAM_2.[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter n.[0m
-[0m[[0m[31merror[0m] [0m[0m        test (new RAM_2).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation[0m
-[0m[[0m[31merror[0m] [0m[0m              ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/chen/ysyx/chisel-book/ex10_fifo/src/test/scala/test_RAM_2.scala:41:25: in_write_data is already defined as value in_write_data[0m
-[0m[[0m[31merror[0m] [0m[0m                    val in_write_data = Random.nextInt(8)[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
