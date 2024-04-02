@@ -12,11 +12,7 @@ class PS_2 extends  Module{
         //1个奇偶校验位（奇校验）
         //1位停止位（逻辑1）
     })
-    val PS2C= RegInt(1.U(1.W))
-    val PS2C= RegInt(1.U(1.W))
-
-
-    
+    val PS2C= RegInit(1.U(1.W))    
 }
 
 object myPS_2 extends App{

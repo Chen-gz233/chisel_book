@@ -3,9 +3,9 @@ import chiseltest._
 import scala.util.Random
 import org.scalatest.flatspec.AnyFlatSpec
 
-class mux4_1_Test extends AnyFlatSpec with ChiselScalatestTester{
+class PS_2_Test extends AnyFlatSpec with ChiselScalatestTester{
     "Waveform" should "pass" in {
-        test (new mux4_1).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+        test (new PS_2).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
             dut=>
                 val in_a_tb = Random.nextInt(4)
                 val in_sel_tb = Random.nextInt(2)
