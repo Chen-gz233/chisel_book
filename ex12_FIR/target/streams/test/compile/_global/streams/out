@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/chen/chisel_book/ex12_FIR/src/test/scala/fir_tb.scala:8:32: identifier expected but '.' found.[0m
+[0m[[0m[31merror[0m] [0m[0m        test(new fir(1,2,3,4))..withAnnotations(Seq(WriteVcdAnnotation)){[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
