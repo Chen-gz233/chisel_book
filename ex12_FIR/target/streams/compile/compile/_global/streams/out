@@ -1,4 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/chen/chisel_book/ex12_FIR/src/main/scala/fir.scala:19:5: not found: value emitVerlog[0m
-[0m[[0m[31merror[0m] [0m[0m    emitVerlog(new fir(1,2,3,4),Array("--target-dir","generate"))[0m
-[0m[[0m[31merror[0m] [0m[0m    ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
