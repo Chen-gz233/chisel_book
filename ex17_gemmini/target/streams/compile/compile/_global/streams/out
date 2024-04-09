@@ -1,0 +1,788 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/amba/axi4/Deinterleaver.scala:75:19: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m            assert(!q.enq.valid, s"ID ${i} should not be used")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/devices/debug/Debug.scala:1402:12: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert ((hartSelFuncs.hartSelToHartId(selectedHartReg) < flags.size.U),[0m
+[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/devices/debug/SBA.scala:222:88: Passing an Int to .U is usually a mistake: It does *not* set the width but does a bit extract.[0m
+[0m[[0m[33mwarn[0m] [0m[0mDid you mean .U(i.W)?[0m
+[0m[[0m[33mwarn[0m] [0m[0mIf you do want bit extraction, use .U.extract(i) instead.[0m
+[0m[[0m[33mwarn[0m] [0m[0m        sbErrorReg(i) := Mux(sberrorWrEn && SBCSWrData.sberror(i) === 1.U, NoError.id.U(i), // W1C[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/devices/debug/SBA.scala:223:148: Passing an Int to .U is usually a mistake: It does *not* set the width but does a bit extract.[0m
+[0m[[0m[33mwarn[0m] [0m[0mDid you mean .U(i.W)?[0m
+[0m[[0m[33mwarn[0m] [0m[0mIf you do want bit extraction, use .U.extract(i) instead.[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         Mux((sb2tl.module.io.wrEn && !sb2tl.module.io.wrLegal) || (sb2tl.module.io.rdEn && !sb2tl.module.io.rdLegal), BadAddr.id.U(i), // Bad address accessed[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                                                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/devices/debug/SBA.scala:224:86: Passing an Int to .U is usually a mistake: It does *not* set the width but does a bit extract.[0m
+[0m[[0m[33mwarn[0m] [0m[0mDid you mean .U(i.W)?[0m
+[0m[[0m[33mwarn[0m] [0m[0mIf you do want bit extraction, use .U.extract(i) instead.[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         Mux((tryWrEn || tryRdEn) && sbAlignmentError, AlgnError.id.U(i), // Address alignment error[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/devices/debug/SBA.scala:225:83: Passing an Int to .U is usually a mistake: It does *not* set the width but does a bit extract.[0m
+[0m[[0m[33mwarn[0m] [0m[0mDid you mean .U(i.W)?[0m
+[0m[[0m[33mwarn[0m] [0m[0mIf you do want bit extraction, use .U.extract(i) instead.[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         Mux((tryWrEn || tryRdEn) && sbAccessError, BadAccess.id.U(i), // Access size error[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/devices/debug/SBA.scala:226:126: Passing an Int to .U is usually a mistake: It does *not* set the width but does a bit extract.[0m
+[0m[[0m[33mwarn[0m] [0m[0mDid you mean .U(i.W)?[0m
+[0m[[0m[33mwarn[0m] [0m[0mIf you do want bit extraction, use .U.extract(i) instead.[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         Mux((sb2tl.module.io.rdDone || sb2tl.module.io.wrDone) && sb2tl.module.io.respError, OtherError.id.U(i), sbErrorReg(i)))))) // Response error from TL[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/formal/FormalUtils.scala:71:15: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m        printf(s"assert:${proposed_src}:${prop_type.toString} ${message + "_" + line_info}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/formal/FormalUtils.scala:75:15: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m        printf(s"assert:${proposed_src}:${prop_type.toString} ${message + "_" + line_info}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/formal/FormalUtils.scala:79:15: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m        printf(s"assume:${proposed_src}:${prop_type.toString} ${message + "_" + line_info}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/formal/FormalUtils.scala:84:19: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m            printf(s"assert:${proposed_src}:${prop_type.toString} ${message + "_" + line_info}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/formal/FormalUtils.scala:88:21: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m              printf(s"cover:${proposed_src}:${prop_type.toString} ${message + "_" + line_info}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/groundtest/TraceGen.scala:587:11: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    printf(s"FINISHED ${numGens}\n")[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/groundtest/TraceGen.scala:633:9: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  assert(!tracegen.io.timeout, s"TraceGen tile ${outer.tileParams.hartId}: request timed out")[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/rocket/Events.scala:19:38: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      when (check(1.U << i)) { printf(s"Event $name\n") }[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/tilelink/Arbiter.scala:200:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert((numSources-1 until id by -1).map(!sources(_).fire).foldLeft(true.B)(_&&_), s"$id was valid but a higher valid source was granted ready.")[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/tilelink/Arbiter.scala:215:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert((0 until id).map(!sources(_).fire).foldLeft(true.B)(_&&_), s"$id was valid but a lower valid source was granted ready.")[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/tilelink/PatternPusher.scala:74:12: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert (end || Vec(plegal)(step), s"Pattern pusher ${name} tried to push an illegal request")[0m
+[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/tilelink/RegisterRouterTest.scala:8:40: imported `RRTest0' is permanently hidden by definition of class RRTest0 in package tilelink[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport freechips.rocketchip.regmapper.{RRTest0, RRTest1,RegisterRouter}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/tilelink/RegisterRouterTest.scala:8:49: imported `RRTest1' is permanently hidden by definition of class RRTest1 in package tilelink[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport freechips.rocketchip.regmapper.{RRTest0, RRTest1,RegisterRouter}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/unittest/UnitTest.scala:31:27: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  when (io.start) { printf(s"Started UnitTest $testName\n") }[0m
+[0m[[0m[33mwarn[0m] [0m[0m                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/unittest/UnitTest.scala:34:9: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  assert(!timed_out, s"UnitTest $testName timed out")[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/PlusArg.scala:64:12: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert (io.count < max, s"Timeout exceeded: $docstring")[0m
+[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:342:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(0) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=0: expected=0 actual=%d", get_replace_ways(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:343:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(1) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=1: expected=1 actual=%d", get_replace_ways(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:344:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(0) === 1.U(plru.nBits.W), s"get_next_state state=0 way=0: expected=1 actual=%d", get_next_states(0)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:345:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(1) === 0.U(plru.nBits.W), s"get_next_state state=0 way=1: expected=0 actual=%d", get_next_states(0)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:346:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(0) === 1.U(plru.nBits.W), s"get_next_state state=1 way=0: expected=1 actual=%d", get_next_states(1)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:347:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(1) === 0.U(plru.nBits.W), s"get_next_state state=1 way=1: expected=0 actual=%d", get_next_states(1)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:350:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(0) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=0: expected=0 actual=%d", get_replace_ways(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:351:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(1) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=1: expected=1 actual=%d", get_replace_ways(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:352:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(2) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=2: expected=2 actual=%d", get_replace_ways(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:353:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(3) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=3: expected=2 actual=%d", get_replace_ways(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:354:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(0) === 3.U(plru.nBits.W), s"get_next_state state=0 way=0: expected=3 actual=%d", get_next_states(0)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:355:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(1) === 2.U(plru.nBits.W), s"get_next_state state=0 way=1: expected=2 actual=%d", get_next_states(0)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:356:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(2) === 0.U(plru.nBits.W), s"get_next_state state=0 way=2: expected=0 actual=%d", get_next_states(0)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:357:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(0) === 3.U(plru.nBits.W), s"get_next_state state=1 way=0: expected=3 actual=%d", get_next_states(1)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:358:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(1) === 2.U(plru.nBits.W), s"get_next_state state=1 way=1: expected=2 actual=%d", get_next_states(1)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:359:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(2) === 1.U(plru.nBits.W), s"get_next_state state=1 way=2: expected=1 actual=%d", get_next_states(1)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:360:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(2)(0) === 3.U(plru.nBits.W), s"get_next_state state=2 way=0: expected=3 actual=%d", get_next_states(2)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:361:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(2)(1) === 2.U(plru.nBits.W), s"get_next_state state=2 way=1: expected=2 actual=%d", get_next_states(2)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:362:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(2)(2) === 0.U(plru.nBits.W), s"get_next_state state=2 way=2: expected=0 actual=%d", get_next_states(2)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:363:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(3)(0) === 3.U(plru.nBits.W), s"get_next_state state=3 way=0: expected=3 actual=%d", get_next_states(3)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:364:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(3)(1) === 2.U(plru.nBits.W), s"get_next_state state=3 way=1: expected=2 actual=%d", get_next_states(3)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:365:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(3)(2) === 1.U(plru.nBits.W), s"get_next_state state=3 way=2: expected=1 actual=%d", get_next_states(3)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:368:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(0) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=0: expected=0 actual=%d", get_replace_ways(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:369:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(1) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=1: expected=1 actual=%d", get_replace_ways(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:370:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(2) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=2: expected=0 actual=%d", get_replace_ways(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:371:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(3) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=3: expected=1 actual=%d", get_replace_ways(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:372:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(4) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=4: expected=2 actual=%d", get_replace_ways(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:373:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(5) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=5: expected=2 actual=%d", get_replace_ways(5))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:374:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(6) === 3.U(log2Ceil(n_ways).W), s"get_replace_way state=6: expected=3 actual=%d", get_replace_ways(6))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:375:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(7) === 3.U(log2Ceil(n_ways).W), s"get_replace_way state=7: expected=3 actual=%d", get_replace_ways(7))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:376:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(0) === 5.U(plru.nBits.W), s"get_next_state state=0 way=0: expected=5 actual=%d", get_next_states(0)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:377:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(1) === 4.U(plru.nBits.W), s"get_next_state state=0 way=1: expected=4 actual=%d", get_next_states(0)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:378:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(2) === 2.U(plru.nBits.W), s"get_next_state state=0 way=2: expected=2 actual=%d", get_next_states(0)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:379:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(0)(3) === 0.U(plru.nBits.W), s"get_next_state state=0 way=3: expected=0 actual=%d", get_next_states(0)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:380:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(0) === 5.U(plru.nBits.W), s"get_next_state state=1 way=0: expected=5 actual=%d", get_next_states(1)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:381:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(1) === 4.U(plru.nBits.W), s"get_next_state state=1 way=1: expected=4 actual=%d", get_next_states(1)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:382:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(2) === 3.U(plru.nBits.W), s"get_next_state state=1 way=2: expected=3 actual=%d", get_next_states(1)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:383:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(1)(3) === 1.U(plru.nBits.W), s"get_next_state state=1 way=3: expected=1 actual=%d", get_next_states(1)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:384:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(2)(0) === 7.U(plru.nBits.W), s"get_next_state state=2 way=0: expected=7 actual=%d", get_next_states(2)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:385:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(2)(1) === 6.U(plru.nBits.W), s"get_next_state state=2 way=1: expected=6 actual=%d", get_next_states(2)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:386:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(2)(2) === 2.U(plru.nBits.W), s"get_next_state state=2 way=2: expected=2 actual=%d", get_next_states(2)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:387:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(2)(3) === 0.U(plru.nBits.W), s"get_next_state state=2 way=3: expected=0 actual=%d", get_next_states(2)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:388:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(3)(0) === 7.U(plru.nBits.W), s"get_next_state state=3 way=0: expected=7 actual=%d", get_next_states(3)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:389:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(3)(1) === 6.U(plru.nBits.W), s"get_next_state state=3 way=1: expected=6 actual=%d", get_next_states(3)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:390:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(3)(2) === 3.U(plru.nBits.W), s"get_next_state state=3 way=2: expected=3 actual=%d", get_next_states(3)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:391:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(3)(3) === 1.U(plru.nBits.W), s"get_next_state state=3 way=3: expected=1 actual=%d", get_next_states(3)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:392:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(4)(0) === 5.U(plru.nBits.W), s"get_next_state state=4 way=0: expected=5 actual=%d", get_next_states(4)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:393:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(4)(1) === 4.U(plru.nBits.W), s"get_next_state state=4 way=1: expected=4 actual=%d", get_next_states(4)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:394:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(4)(2) === 2.U(plru.nBits.W), s"get_next_state state=4 way=2: expected=2 actual=%d", get_next_states(4)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:395:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(4)(3) === 0.U(plru.nBits.W), s"get_next_state state=4 way=3: expected=0 actual=%d", get_next_states(4)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:396:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(5)(0) === 5.U(plru.nBits.W), s"get_next_state state=5 way=0: expected=5 actual=%d", get_next_states(5)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:397:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(5)(1) === 4.U(plru.nBits.W), s"get_next_state state=5 way=1: expected=4 actual=%d", get_next_states(5)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:398:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(5)(2) === 3.U(plru.nBits.W), s"get_next_state state=5 way=2: expected=3 actual=%d", get_next_states(5)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:399:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(5)(3) === 1.U(plru.nBits.W), s"get_next_state state=5 way=3: expected=1 actual=%d", get_next_states(5)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:400:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(6)(0) === 7.U(plru.nBits.W), s"get_next_state state=6 way=0: expected=7 actual=%d", get_next_states(6)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:401:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(6)(1) === 6.U(plru.nBits.W), s"get_next_state state=6 way=1: expected=6 actual=%d", get_next_states(6)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:402:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(6)(2) === 2.U(plru.nBits.W), s"get_next_state state=6 way=2: expected=2 actual=%d", get_next_states(6)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:403:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(6)(3) === 0.U(plru.nBits.W), s"get_next_state state=6 way=3: expected=0 actual=%d", get_next_states(6)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:404:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(7)(0) === 7.U(plru.nBits.W), s"get_next_state state=7 way=0: expected=7 actual=%d", get_next_states(7)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:405:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(7)(1) === 6.U(plru.nBits.W), s"get_next_state state=7 way=5: expected=6 actual=%d", get_next_states(7)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:406:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(7)(2) === 3.U(plru.nBits.W), s"get_next_state state=7 way=2: expected=3 actual=%d", get_next_states(7)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:407:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(7)(3) === 1.U(plru.nBits.W), s"get_next_state state=7 way=3: expected=1 actual=%d", get_next_states(7)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:410:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 0) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=00: expected=0 actual=%d", get_replace_ways( 0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:411:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 1) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=01: expected=1 actual=%d", get_replace_ways( 1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:412:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 2) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=02: expected=0 actual=%d", get_replace_ways( 2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:413:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 3) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=03: expected=1 actual=%d", get_replace_ways( 3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:414:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 4) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=04: expected=2 actual=%d", get_replace_ways( 4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:415:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 5) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=05: expected=2 actual=%d", get_replace_ways( 5))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:416:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 6) === 3.U(log2Ceil(n_ways).W), s"get_replace_way state=06: expected=3 actual=%d", get_replace_ways( 6))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:417:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 7) === 3.U(log2Ceil(n_ways).W), s"get_replace_way state=07: expected=3 actual=%d", get_replace_ways( 7))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:418:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 8) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=08: expected=4 actual=%d", get_replace_ways( 8))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:419:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 9) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=09: expected=4 actual=%d", get_replace_ways( 9))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:420:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(10) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=10: expected=4 actual=%d", get_replace_ways(10))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:421:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(11) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=11: expected=4 actual=%d", get_replace_ways(11))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:422:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(12) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=12: expected=4 actual=%d", get_replace_ways(12))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:423:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(13) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=13: expected=4 actual=%d", get_replace_ways(13))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:424:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(14) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=14: expected=4 actual=%d", get_replace_ways(14))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:425:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(15) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=15: expected=4 actual=%d", get_replace_ways(15))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:426:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 0)(0) === 13.U(plru.nBits.W), s"get_next_state state=00 way=0: expected=13 actual=%d", get_next_states( 0)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:427:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 0)(1) === 12.U(plru.nBits.W), s"get_next_state state=00 way=1: expected=12 actual=%d", get_next_states( 0)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:428:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 0)(2) === 10.U(plru.nBits.W), s"get_next_state state=00 way=2: expected=10 actual=%d", get_next_states( 0)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:429:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 0)(3) ===  8.U(plru.nBits.W), s"get_next_state state=00 way=3: expected=08 actual=%d", get_next_states( 0)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:430:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 0)(4) ===  0.U(plru.nBits.W), s"get_next_state state=00 way=4: expected=00 actual=%d", get_next_states( 0)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:431:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 1)(0) === 13.U(plru.nBits.W), s"get_next_state state=01 way=0: expected=13 actual=%d", get_next_states( 1)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:432:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 1)(1) === 12.U(plru.nBits.W), s"get_next_state state=01 way=1: expected=12 actual=%d", get_next_states( 1)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:433:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 1)(2) === 11.U(plru.nBits.W), s"get_next_state state=01 way=2: expected=11 actual=%d", get_next_states( 1)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:434:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 1)(3) ===  9.U(plru.nBits.W), s"get_next_state state=01 way=3: expected=09 actual=%d", get_next_states( 1)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:435:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 1)(4) ===  1.U(plru.nBits.W), s"get_next_state state=01 way=4: expected=01 actual=%d", get_next_states( 1)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:436:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 2)(0) === 15.U(plru.nBits.W), s"get_next_state state=02 way=0: expected=15 actual=%d", get_next_states( 2)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:437:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 2)(1) === 14.U(plru.nBits.W), s"get_next_state state=02 way=1: expected=14 actual=%d", get_next_states( 2)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:438:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 2)(2) === 10.U(plru.nBits.W), s"get_next_state state=02 way=2: expected=10 actual=%d", get_next_states( 2)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:439:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 2)(3) ===  8.U(plru.nBits.W), s"get_next_state state=02 way=3: expected=08 actual=%d", get_next_states( 2)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:440:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 2)(4) ===  2.U(plru.nBits.W), s"get_next_state state=02 way=4: expected=02 actual=%d", get_next_states( 2)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:441:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 3)(0) === 15.U(plru.nBits.W), s"get_next_state state=03 way=0: expected=15 actual=%d", get_next_states( 3)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:442:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 3)(1) === 14.U(plru.nBits.W), s"get_next_state state=03 way=1: expected=14 actual=%d", get_next_states( 3)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:443:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 3)(2) === 11.U(plru.nBits.W), s"get_next_state state=03 way=2: expected=11 actual=%d", get_next_states( 3)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:444:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 3)(3) ===  9.U(plru.nBits.W), s"get_next_state state=03 way=3: expected=09 actual=%d", get_next_states( 3)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:445:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 3)(4) ===  3.U(plru.nBits.W), s"get_next_state state=03 way=4: expected=03 actual=%d", get_next_states( 3)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:446:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 4)(0) === 13.U(plru.nBits.W), s"get_next_state state=04 way=0: expected=13 actual=%d", get_next_states( 4)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:447:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 4)(1) === 12.U(plru.nBits.W), s"get_next_state state=04 way=1: expected=12 actual=%d", get_next_states( 4)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:448:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 4)(2) === 10.U(plru.nBits.W), s"get_next_state state=04 way=2: expected=10 actual=%d", get_next_states( 4)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:449:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 4)(3) ===  8.U(plru.nBits.W), s"get_next_state state=04 way=3: expected=08 actual=%d", get_next_states( 4)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:450:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 4)(4) ===  4.U(plru.nBits.W), s"get_next_state state=04 way=4: expected=04 actual=%d", get_next_states( 4)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:451:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 5)(0) === 13.U(plru.nBits.W), s"get_next_state state=05 way=0: expected=13 actual=%d", get_next_states( 5)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:452:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 5)(1) === 12.U(plru.nBits.W), s"get_next_state state=05 way=1: expected=12 actual=%d", get_next_states( 5)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:453:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 5)(2) === 11.U(plru.nBits.W), s"get_next_state state=05 way=2: expected=11 actual=%d", get_next_states( 5)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:454:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 5)(3) ===  9.U(plru.nBits.W), s"get_next_state state=05 way=3: expected=09 actual=%d", get_next_states( 5)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:455:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 5)(4) ===  5.U(plru.nBits.W), s"get_next_state state=05 way=4: expected=05 actual=%d", get_next_states( 5)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:456:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 6)(0) === 15.U(plru.nBits.W), s"get_next_state state=06 way=0: expected=15 actual=%d", get_next_states( 6)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:457:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 6)(1) === 14.U(plru.nBits.W), s"get_next_state state=06 way=1: expected=14 actual=%d", get_next_states( 6)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:458:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 6)(2) === 10.U(plru.nBits.W), s"get_next_state state=06 way=2: expected=10 actual=%d", get_next_states( 6)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:459:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 6)(3) ===  8.U(plru.nBits.W), s"get_next_state state=06 way=3: expected=08 actual=%d", get_next_states( 6)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:460:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 6)(4) ===  6.U(plru.nBits.W), s"get_next_state state=06 way=4: expected=06 actual=%d", get_next_states( 6)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:461:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 7)(0) === 15.U(plru.nBits.W), s"get_next_state state=07 way=0: expected=15 actual=%d", get_next_states( 7)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:462:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 7)(1) === 14.U(plru.nBits.W), s"get_next_state state=07 way=5: expected=14 actual=%d", get_next_states( 7)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:463:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 7)(2) === 11.U(plru.nBits.W), s"get_next_state state=07 way=2: expected=11 actual=%d", get_next_states( 7)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:464:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 7)(3) ===  9.U(plru.nBits.W), s"get_next_state state=07 way=3: expected=09 actual=%d", get_next_states( 7)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:465:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 7)(4) ===  7.U(plru.nBits.W), s"get_next_state state=07 way=4: expected=07 actual=%d", get_next_states( 7)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:466:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 8)(0) === 13.U(plru.nBits.W), s"get_next_state state=08 way=0: expected=13 actual=%d", get_next_states( 8)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:467:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 8)(1) === 12.U(plru.nBits.W), s"get_next_state state=08 way=1: expected=12 actual=%d", get_next_states( 8)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:468:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 8)(2) === 10.U(plru.nBits.W), s"get_next_state state=08 way=2: expected=10 actual=%d", get_next_states( 8)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:469:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 8)(3) ===  8.U(plru.nBits.W), s"get_next_state state=08 way=3: expected=08 actual=%d", get_next_states( 8)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:470:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 8)(4) ===  0.U(plru.nBits.W), s"get_next_state state=08 way=4: expected=00 actual=%d", get_next_states( 8)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:471:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 9)(0) === 13.U(plru.nBits.W), s"get_next_state state=09 way=0: expected=13 actual=%d", get_next_states( 9)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:472:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 9)(1) === 12.U(plru.nBits.W), s"get_next_state state=09 way=1: expected=12 actual=%d", get_next_states( 9)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:473:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 9)(2) === 11.U(plru.nBits.W), s"get_next_state state=09 way=2: expected=11 actual=%d", get_next_states( 9)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:474:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 9)(3) ===  9.U(plru.nBits.W), s"get_next_state state=09 way=3: expected=09 actual=%d", get_next_states( 9)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:475:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states( 9)(4) ===  1.U(plru.nBits.W), s"get_next_state state=09 way=4: expected=01 actual=%d", get_next_states( 9)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:476:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(10)(0) === 15.U(plru.nBits.W), s"get_next_state state=10 way=0: expected=15 actual=%d", get_next_states(10)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:477:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(10)(1) === 14.U(plru.nBits.W), s"get_next_state state=10 way=1: expected=14 actual=%d", get_next_states(10)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:478:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(10)(2) === 10.U(plru.nBits.W), s"get_next_state state=10 way=2: expected=10 actual=%d", get_next_states(10)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:479:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(10)(3) ===  8.U(plru.nBits.W), s"get_next_state state=10 way=3: expected=08 actual=%d", get_next_states(10)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:480:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(10)(4) ===  2.U(plru.nBits.W), s"get_next_state state=10 way=4: expected=02 actual=%d", get_next_states(10)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:481:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(11)(0) === 15.U(plru.nBits.W), s"get_next_state state=11 way=0: expected=15 actual=%d", get_next_states(11)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:482:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(11)(1) === 14.U(plru.nBits.W), s"get_next_state state=11 way=1: expected=14 actual=%d", get_next_states(11)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:483:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(11)(2) === 11.U(plru.nBits.W), s"get_next_state state=11 way=2: expected=11 actual=%d", get_next_states(11)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:484:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(11)(3) ===  9.U(plru.nBits.W), s"get_next_state state=11 way=3: expected=09 actual=%d", get_next_states(11)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:485:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(11)(4) ===  3.U(plru.nBits.W), s"get_next_state state=11 way=4: expected=03 actual=%d", get_next_states(11)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:486:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(12)(0) === 13.U(plru.nBits.W), s"get_next_state state=12 way=0: expected=13 actual=%d", get_next_states(12)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:487:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(12)(1) === 12.U(plru.nBits.W), s"get_next_state state=12 way=1: expected=12 actual=%d", get_next_states(12)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:488:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(12)(2) === 10.U(plru.nBits.W), s"get_next_state state=12 way=2: expected=10 actual=%d", get_next_states(12)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:489:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(12)(3) ===  8.U(plru.nBits.W), s"get_next_state state=12 way=3: expected=08 actual=%d", get_next_states(12)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:490:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(12)(4) ===  4.U(plru.nBits.W), s"get_next_state state=12 way=4: expected=04 actual=%d", get_next_states(12)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:491:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(13)(0) === 13.U(plru.nBits.W), s"get_next_state state=13 way=0: expected=13 actual=%d", get_next_states(13)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:492:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(13)(1) === 12.U(plru.nBits.W), s"get_next_state state=13 way=1: expected=12 actual=%d", get_next_states(13)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:493:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(13)(2) === 11.U(plru.nBits.W), s"get_next_state state=13 way=2: expected=11 actual=%d", get_next_states(13)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:494:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(13)(3) ===  9.U(plru.nBits.W), s"get_next_state state=13 way=3: expected=09 actual=%d", get_next_states(13)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:495:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(13)(4) ===  5.U(plru.nBits.W), s"get_next_state state=13 way=4: expected=05 actual=%d", get_next_states(13)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:496:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(14)(0) === 15.U(plru.nBits.W), s"get_next_state state=14 way=0: expected=15 actual=%d", get_next_states(14)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:497:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(14)(1) === 14.U(plru.nBits.W), s"get_next_state state=14 way=1: expected=14 actual=%d", get_next_states(14)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:498:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(14)(2) === 10.U(plru.nBits.W), s"get_next_state state=14 way=2: expected=10 actual=%d", get_next_states(14)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:499:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(14)(3) ===  8.U(plru.nBits.W), s"get_next_state state=14 way=3: expected=08 actual=%d", get_next_states(14)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:500:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(14)(4) ===  6.U(plru.nBits.W), s"get_next_state state=14 way=4: expected=06 actual=%d", get_next_states(14)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:501:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(15)(0) === 15.U(plru.nBits.W), s"get_next_state state=15 way=0: expected=15 actual=%d", get_next_states(15)(0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:502:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(15)(1) === 14.U(plru.nBits.W), s"get_next_state state=15 way=5: expected=14 actual=%d", get_next_states(15)(1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:503:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(15)(2) === 11.U(plru.nBits.W), s"get_next_state state=15 way=2: expected=11 actual=%d", get_next_states(15)(2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:504:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(15)(3) ===  9.U(plru.nBits.W), s"get_next_state state=15 way=3: expected=09 actual=%d", get_next_states(15)(3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:505:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_next_states(15)(4) ===  7.U(plru.nBits.W), s"get_next_state state=15 way=4: expected=07 actual=%d", get_next_states(15)(4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:508:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 0) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=00: expected=0 actual=%d", get_replace_ways( 0))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:509:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 1) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=01: expected=1 actual=%d", get_replace_ways( 1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:510:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 2) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=02: expected=0 actual=%d", get_replace_ways( 2))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:511:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 3) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=03: expected=1 actual=%d", get_replace_ways( 3))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:512:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 4) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=04: expected=2 actual=%d", get_replace_ways( 4))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:513:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 5) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=05: expected=2 actual=%d", get_replace_ways( 5))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:514:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 6) === 3.U(log2Ceil(n_ways).W), s"get_replace_way state=06: expected=3 actual=%d", get_replace_ways( 6))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:515:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 7) === 3.U(log2Ceil(n_ways).W), s"get_replace_way state=07: expected=3 actual=%d", get_replace_ways( 7))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:516:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 8) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=08: expected=0 actual=%d", get_replace_ways( 8))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:517:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways( 9) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=09: expected=1 actual=%d", get_replace_ways( 9))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:518:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(10) === 0.U(log2Ceil(n_ways).W), s"get_replace_way state=10: expected=0 actual=%d", get_replace_ways(10))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:519:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(11) === 1.U(log2Ceil(n_ways).W), s"get_replace_way state=11: expected=1 actual=%d", get_replace_ways(11))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:520:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(12) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=12: expected=2 actual=%d", get_replace_ways(12))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:521:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(13) === 2.U(log2Ceil(n_ways).W), s"get_replace_way state=13: expected=2 actual=%d", get_replace_ways(13))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:522:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(14) === 3.U(log2Ceil(n_ways).W), s"get_replace_way state=14: expected=3 actual=%d", get_replace_ways(14))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:523:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(15) === 3.U(log2Ceil(n_ways).W), s"get_replace_way state=15: expected=3 actual=%d", get_replace_ways(15))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:524:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(16) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=16: expected=4 actual=%d", get_replace_ways(16))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:525:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(17) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=17: expected=4 actual=%d", get_replace_ways(17))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:526:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(18) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=18: expected=4 actual=%d", get_replace_ways(18))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:527:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(19) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=19: expected=4 actual=%d", get_replace_ways(19))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:528:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(20) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=20: expected=4 actual=%d", get_replace_ways(20))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:529:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(21) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=21: expected=4 actual=%d", get_replace_ways(21))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:530:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(22) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=22: expected=4 actual=%d", get_replace_ways(22))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:531:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(23) === 4.U(log2Ceil(n_ways).W), s"get_replace_way state=23: expected=4 actual=%d", get_replace_ways(23))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:532:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(24) === 5.U(log2Ceil(n_ways).W), s"get_replace_way state=24: expected=5 actual=%d", get_replace_ways(24))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:533:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(25) === 5.U(log2Ceil(n_ways).W), s"get_replace_way state=25: expected=5 actual=%d", get_replace_ways(25))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:534:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(26) === 5.U(log2Ceil(n_ways).W), s"get_replace_way state=26: expected=5 actual=%d", get_replace_ways(26))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:535:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(27) === 5.U(log2Ceil(n_ways).W), s"get_replace_way state=27: expected=5 actual=%d", get_replace_ways(27))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:536:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(28) === 5.U(log2Ceil(n_ways).W), s"get_replace_way state=28: expected=5 actual=%d", get_replace_ways(28))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:537:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(29) === 5.U(log2Ceil(n_ways).W), s"get_replace_way state=29: expected=5 actual=%d", get_replace_ways(29))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:538:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(30) === 5.U(log2Ceil(n_ways).W), s"get_replace_way state=30: expected=5 actual=%d", get_replace_ways(30))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/Replacement.scala:539:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(get_replace_ways(31) === 5.U(log2Ceil(n_ways).W), s"get_replace_way state=31: expected=5 actual=%d", get_replace_ways(31))[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/util/DFT.scala:24:49: non-variable type argument chisel3.Bundle in type pattern sifive.blocks.util.HasDeviceDFTPorts[chisel3.Bundle] is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m  val dftNodes = devices.collect { case source: HasDeviceDFTPorts[Bundle] => source }[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/Network.scala:105:11: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert(!in.a.valid || PopCount(aMatches) === 1.U,[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/Network.scala:107:11: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert(!in.c.valid || PopCount(cMatches) === 1.U,[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/Network.scala:109:11: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert(!in.e.valid || PopCount(eMatches) === 1.U,[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/Network.scala:163:11: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert(!out.b.valid || PopCount(bMatches) === 1.U,[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/Network.scala:165:11: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    assert(!out.d.valid || PopCount(dMatches) === 1.U,[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/TraceIO.scala:201:17: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time print, use println.[0m
+[0m[[0m[33mwarn[0m] [0m[0m          printf(s"TRACEPORT ${idx}: %x\n", trace.insns.reverse.asUInt.pad(512))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/Unittests.scala:451:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(io.in.bits.payload === streamExpect(streamIdx), s"Unexpected data at output ${id}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/Unittests.scala:452:13: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      assert(io.in.bits.last === streamLast, s"Unexpect last at output ${id}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/testchipip/scala/Unittests.scala:456:9: The s-interpolator prints the Scala .toString of Data objects rather than the value of the hardware wire during simulation. Use the cf-interpolator instead. If you want an elaboration time check, call assert with a Boolean condition.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  assert(!io.in.valid || io.in.bits.netId === id.U, s"Output ${id} got data intended for another")[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/util/ElaborationArtefactAnnotation.scala:77:98: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: (_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        many.tail.foldLeft(Seq[Token](MemoryPathToken(many.head.asInstanceOf[ReferenceTarget]))) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/gemmini/VectorScalarMultiplier.scala:135:32: unreachable code[0m
+[0m[[0m[33mwarn[0m] [0m[0m            case b: Bool => 1.U(1.W)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/gpio/GPIO.scala:278:44: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      gpioClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/gpio/GPIO.scala:295:6: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    (intXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/i2c/I2C.scala:608:43: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      i2cClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/i2c/I2C.scala:625:6: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    (intXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/porgen/PorGen.scala:134:46: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      porgenClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/pwm/PWM.scala:130:43: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      pwmClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/pwm/PWM.scala:147:6: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    (intXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/spi/SPI.scala:46:43: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      spiClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/spi/SPI.scala:63:6: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    (intXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/spi/SPI.scala:101:44: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      qspiClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/spi/SPI.scala:133:6: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    (intXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/stream/PseudoStream.scala:118:46: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      streamClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/timer/Timer.scala:91:45: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      timerClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/timer/Timer.scala:108:6: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    (intXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/uart/UART.scala:230:44: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      uartClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/uart/UART.scala:247:6: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    (intXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/wdt/TLWDT.scala:85:43: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      wdtClockDomainWrapper.clockNode := (controlXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/sifive/devices/wdt/TLWDT.scala:102:6: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: CreditedCrossing(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    (intXType match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m     ^[0m
+[0m[[0m[0minfo[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/amba/ahb/Test.scala:1:1: [0m
+[0m[[0m[0minfo[0m] [0m[0mFound names but no class, trait or object is defined in the compilation unit.[0m
+[0m[[0m[0minfo[0m] [0m[0mThe incremental compiler cannot record the dependency information in such case.[0m
+[0m[[0m[0minfo[0m] [0m[0mSome errors like unused import referring to a non-existent class might not be reported.[0m
+[0m[[0m[0minfo[0m] [0m[0m    [0m
+[0m[[0m[0minfo[0m] [0m[0m// See LICENSE.SiFive for license details.[0m
+[0m[[0m[0minfo[0m] [0m[0m^[0m
+[0m[[0m[0minfo[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/amba/apb/Test.scala:1:1: [0m
+[0m[[0m[0minfo[0m] [0m[0mFound names but no class, trait or object is defined in the compilation unit.[0m
+[0m[[0m[0minfo[0m] [0m[0mThe incremental compiler cannot record the dependency information in such case.[0m
+[0m[[0m[0minfo[0m] [0m[0mSome errors like unused import referring to a non-existent class might not be reported.[0m
+[0m[[0m[0minfo[0m] [0m[0m    [0m
+[0m[[0m[0minfo[0m] [0m[0m// See LICENSE.SiFive for license details.[0m
+[0m[[0m[0minfo[0m] [0m[0m^[0m
+[0m[[0m[0minfo[0m] [0m[0m/home/chen/chisel_book/ex17_gemmini/src/main/scala/freechips/rocketchip/scala/amba/axi4/Test.scala:1:1: [0m
+[0m[[0m[0minfo[0m] [0m[0mFound names but no class, trait or object is defined in the compilation unit.[0m
+[0m[[0m[0minfo[0m] [0m[0mThe incremental compiler cannot record the dependency information in such case.[0m
+[0m[[0m[0minfo[0m] [0m[0mSome errors like unused import referring to a non-existent class might not be reported.[0m
+[0m[[0m[0minfo[0m] [0m[0m    [0m
+[0m[[0m[0minfo[0m] [0m[0m// See LICENSE.SiFive for license details.[0m
+[0m[[0m[0minfo[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere was one deprecation warning[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 446 deprecation warnings (since Chisel 3.5)[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 16 deprecation warnings (since FIRRTL 1.4)[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere was one deprecation warning (since FIRRTL 1.5)[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere was one deprecation warning (since Rocket Chip 2020.05)[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were four deprecation warnings (since rocket-chip 1.3)[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 469 deprecation warnings in total; re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 7937 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0m251 warnings found[0m
