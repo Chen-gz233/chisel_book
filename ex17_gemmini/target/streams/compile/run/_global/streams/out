@@ -1,0 +1,8 @@
+[0m[[0m[31merror[0m] [0m[0mjava.lang.AssertionError: assertion failed: The Chisel compiler plugin is now required for compiling Chisel code. Please see https://github.com/chipsalliance/chisel3#build-your-own-chisel-projects.[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
+[0m[[0m[31merror[0m] [0m[0m	at gemmini.PE$$anon$1.<init>(PE.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at gemmini.PE.<init>(PE.scala:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at gemmini.PE$.$anonfun$new$41(PE.scala:117)[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) java.lang.AssertionError: assertion failed: The Chisel compiler plugin is now required for compiling Chisel code. Please see https://github.com/chipsalliance/chisel3#build-your-own-chisel-projects.[0m
