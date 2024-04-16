@@ -5,7 +5,7 @@ test:
 	sbt test
 
 onlytest:
-	sbt "testOnly gemmini.PE_tb" -Xmx4G
+	sbt "testOnly gemmini.PE_tb"
 
 clean:
 	rm -rf test_run_dir
