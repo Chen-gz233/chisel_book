@@ -15,25 +15,27 @@ class TileSpec extends AnyFlatSpec with ChiselScalatestTester {
     val df = Dataflow.OS
     val tree_reduction = false
     val max_simultaneous_matmuls = 1
-/*
-        dut.io.in_control.dataflow.poke( Dataflow.OS.id.U) // Output-stationary
-        dut.io.in_control.propagate.poke( 0.U) // COMPUTE
-        dut.io.in_control.shift.poke( 0.U)
-*/
+
     // Instantiate Tile
     test(new Tile(SInt(inputWidth.W), SInt(outputWidth.W), SInt(accWidth.W), df, tree_reduction, max_simultaneous_matmuls, rows, columns)).withAnnotations(Seq(WriteVcdAnnotation)) { 
         dut =>
+                println("")
+                println("#### Tile_tb.scala ####")
+                println("")
                 // Set initial values for input ports
                 val in_a_values = Seq.fill(rows)(scala.util.Random.nextInt(100).S)
                 val in_b_values = Seq.fill(columns)(scala.util.Random.nextInt(100).S)
                 val in_d_values = Seq.fill(columns)(scala.util.Random.nextInt(100).S)
+
                 //val in_control_values = Seq.fill(columns)(new PEControl(SInt(accWidth.W)))
                 val in_control_dataflow = Seq.fill(columns)(df.id.U)
                 val in_control_propagate = Seq.fill(columns)(0.U)
                 val in_control_shift = Seq.fill(columns)(0.U)
                 val in_id_values = Seq.fill(columns)(scala.util.Random.nextInt(max_simultaneous_matmuls).U)
-                val in_last_values = Seq.fill(columns)(scala.util.Random.nextBoolean())
-                val in_valid_values = Seq.fill(columns)(scala.util.Random.nextBoolean())
+                //val in_last_values = Seq.fill(columns)(scala.util.Random.nextBoolean())
+                val in_last_values = Seq.fill(columns)(false.B)
+                //val in_valid_values = Seq.fill(columns)(scala.util.Random.nextBoolean())
+                val in_valid_values = Seq.fill(columns)(true.B)
 
                 // Set input ports
                 for (r <- 0 until rows) {
@@ -43,6 +45,7 @@ class TileSpec extends AnyFlatSpec with ChiselScalatestTester {
                 for (c <- 0 until columns) {
                     dut.io.in_b(c).poke(in_b_values(c))
                     dut.io.in_d(c).poke(in_d_values(c))
+
                     //dut.io.in_control(c).poke(in_control_values(c))
                     dut.io.in_control(c).dataflow.poke(in_control_dataflow(c))
                     dut.io.in_control(c).propagate.poke(in_control_propagate(c))
@@ -55,11 +58,6 @@ class TileSpec extends AnyFlatSpec with ChiselScalatestTester {
 
                 // Wait a few cycles for computation to complete
                 dut.clock.step(10)
-/*
-                val in_control_dataflow = Seq.fill(columns)(df.id.U)
-                val in_control_propagate = Seq.fill(columns)(0.U)
-                val in_control_shift = Seq.fill(columns)(0.U)
- */
 
                 // Read output values
                 val out_a_values = dut.io.out_a.map(_.peek())
@@ -101,10 +99,10 @@ class TileSpec extends AnyFlatSpec with ChiselScalatestTester {
                     assert(out_id_values(c).litValue == in_id_values(c).litValue)
                     //println(s"out_a_values a: $out_a_values(r)")
 
-                    assert(out_last_values(c) == in_last_values(c))
+                    assert(out_last_values(c).toString() == in_last_values(c).toString())
                     //println(s"out_a_values a: $out_a_values(r)")
 
-                    assert(out_valid_values(c) == in_valid_values(c))
+                    assert(out_valid_values(c).toString() == in_valid_values(c).toString())
                     //println(s"out_a_values a: $out_a_values(r)")
                     
 

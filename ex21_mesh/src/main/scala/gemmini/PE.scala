@@ -78,6 +78,7 @@ class PE[T <: Data](inputType: T, outputType: T, accType: T, df: Dataflow.Value,
   val PROPAGATE = 1.U(1.W)
 
   io.bad_dataflow := false.B
+
   when ((df == Dataflow.OS).B || ((df == Dataflow.BOTH).B && dataflow === OUTPUT_STATIONARY)) {
     when(prop === PROPAGATE) {
       io.out_c := (c1 >> shift_offset).clippedToWidthOf(outputType)
@@ -90,7 +91,7 @@ class PE[T <: Data](inputType: T, outputType: T, accType: T, df: Dataflow.Value,
       c1 := c1.mac(a, b.asTypeOf(inputType))
       c2 := d.withWidthOf(cType)
     }
-  }.elsewhen ((df == Dataflow.WS).B || ((df == Dataflow.BOTH).B && dataflow === WEIGHT_STATIONARY)) {
+   }.elsewhen ((df == Dataflow.WS).B || ((df == Dataflow.BOTH).B && dataflow === WEIGHT_STATIONARY)) {
     when(prop === PROPAGATE) {
       io.out_c := c1
       io.out_b := b.mac(a, c2.asTypeOf(inputType))
@@ -111,6 +112,7 @@ class PE[T <: Data](inputType: T, outputType: T, accType: T, df: Dataflow.Value,
     c1 := c1
     c2 := c2
   }
+
 }
 
 object PE extends App{
