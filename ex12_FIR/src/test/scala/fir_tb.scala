@@ -18,6 +18,7 @@ class fir_tb extends AnyFlatSpec with ChiselScalatestTester{
             dut.clock.step(1)
             dut.io.in.poke(7.U)
             dut.io.out.expect(25.U)
+            dut.clock.step(2)
 
         }
         println("SUCCESS!!")

@@ -1,7 +1,7 @@
 import chisel3._
 import chisel3.util._
 
-
+//滤波器
 class fir (b0:Int,b1:Int,b2:Int, b3:Int) extends Module{
     val io = IO(new Bundle{
         val in = Input(UInt(8.W))

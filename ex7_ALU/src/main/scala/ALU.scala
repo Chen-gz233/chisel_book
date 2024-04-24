@@ -33,7 +33,7 @@ when(io.in_sel === 1.U){//减法
     io.out_overflow := (io.in_a(n-1)===io.in_b(n-1))&&
                         (Adder_8Module.io.Sum(n-1)=/=io.in_a(n-1))
     io.out_zero := ~(0.U|io.out_result.asUInt)
-
+    
     io.out_xor     := 0.U
     io.out_and     := 0.U
     io.out_or      := 0.U
@@ -41,6 +41,12 @@ when(io.in_sel === 1.U){//减法
     io.out_compare := 0.U
     io.out_equal   := 0.U
     in_b_env       := 0.S
+    //printf(p"myVec = $myVec \n") 
+    println("")
+    println("#### ALU.scala ####")
+    println("")
+    val io_out_zero =  io.out_zero
+    printf(p"sub io.out_zero = $io_out_zero \n") 
 
 }.elsewhen(io.in_sel === 0.U){  //加法
     val Adder_8Module = Module(new Adder_N(n))
@@ -62,6 +68,11 @@ when(io.in_sel === 1.U){//减法
     io.out_compare := 0.U
     io.out_equal   := 0.U
     in_b_env       := 0.S
+    println("")
+    println("#### ALU.scala ####")
+    println("")
+    val io_out_zero =  io.out_zero
+    printf(p"add io.out_zero = $io_out_zero \n") 
 
 }.elsewhen(io.in_sel === 2.U){  //取反 Not A
 
@@ -77,7 +88,12 @@ when(io.in_sel === 1.U){//减法
     io.out_or      := 0.U
     io.out_compare := 0.U
     io.out_equal   := 0.U
-    in_b_env       := 0.S 
+    in_b_env       := 0.S
+    println("")
+    println("#### ALU.scala ####")
+    println("")
+    val io_out_zero =  io.out_zero
+    printf(p"not io.out_zero = $io_out_zero \n") 
 
 }.elsewhen(io.in_sel === 3.U){//与
 
@@ -96,6 +112,11 @@ when(io.in_sel === 1.U){//减法
     io.out_compare := 0.U
     io.out_equal   := 0.U
     in_b_env       := 0.S 
+    println("")
+    println("#### ALU.scala ####")
+    println("")
+    val io_out_zero =  io.out_zero
+    printf(p"and io.out_zero = $io_out_zero \n") 
 
 }.elsewhen(io.in_sel === 4.U){//或
 
@@ -114,6 +135,11 @@ when(io.in_sel === 1.U){//减法
     io.out_compare := 0.U
     io.out_equal   := 0.U
     in_b_env       := 0.S
+    println("")
+    println("#### ALU.scala ####")
+    println("")
+    val io_out_zero =  io.out_zero
+    printf(p"or io.out_zero = $io_out_zero \n") 
 
 }.elsewhen(io.in_sel === 5.U){//异或
 
@@ -132,6 +158,11 @@ when(io.in_sel === 1.U){//减法
     io.out_compare := 0.U
     io.out_equal   := 0.U
     in_b_env       := 0.S
+    println("")
+    println("#### ALU.scala ####")
+    println("")
+    val io_out_zero =  io.out_zero
+    printf(p"xor io.out_zero = $io_out_zero \n") 
 
 
 }.elsewhen(io.in_sel === 6.U){//比较大小
@@ -149,6 +180,11 @@ when(io.in_sel === 1.U){//减法
     io.out_not     := 0.U
     io.out_equal   := 0.U
     in_b_env       := 0.S
+    println("")
+    println("#### ALU.scala ####")
+    println("")
+    val io_out_zero =  io.out_zero
+    printf(p"comp io.out_zero = $io_out_zero \n") 
 
 
 
