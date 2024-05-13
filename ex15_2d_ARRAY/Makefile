@@ -6,4 +6,4 @@ run:
 
 clean:
 	rm -rf generate/*
-	rm -rf test_run_sir/*
+	rm -rf test_run_dir/*
