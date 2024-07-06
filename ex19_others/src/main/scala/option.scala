@@ -22,7 +22,7 @@ class DelayBy1(resetValue: Option[UInt] = None) extends Module {
   io.out := reg
 }
 
-object MyModule extends App {
+object MyDelayBy1 extends App {
 //两者的区别在于，前者未对reset信号进行相应，而后者在时钟上升沿收到reset信号后，将寄存器的值复位为16'h3。
   println(getVerilogString(new DelayBy1))
   println(getVerilogString(new DelayBy1(Some(3.U))))

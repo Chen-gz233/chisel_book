@@ -18,7 +18,7 @@ class HalfFullAdder_2(val hasCarry: Boolean) extends Module {
   io.carryOut := sum(1)
 }
 
-object MyModule extends App {
+object MYHalfFullAdder_2 extends App {
   println("// Half Adder:")
   println(getVerilogString(new HalfFullAdder(false)))
   println("\n\n// Full Adder:")
