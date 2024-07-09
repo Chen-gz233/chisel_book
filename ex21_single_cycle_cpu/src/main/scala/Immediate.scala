@@ -28,14 +28,14 @@ class IMM extends Module {
     }
     is("b101".U) { // 自定义立即数，符号扩展，并且将 imm_32 的第11位置0
       io.imm_32 := Cat(Fill(20, io.instr(31)), io.instr(31, 20))
-      io.imm_32 := io.imm_32.bitSet(10, false.B)
+      io.imm_32 := io.imm_32.bitSet(10.U, false.B)
     }
     is("b111".U) { // 特殊情况，立即数为0
       io.imm_32 := 0.U
     }
-    default {
-      io.imm_32 := 0.U
-    }
+    // default {
+    //   io.imm_32 := 0.U
+    // }
   }
 }
 

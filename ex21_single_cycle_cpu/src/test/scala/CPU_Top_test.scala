@@ -1,18 +1,15 @@
 import chisel3._
-import chisel3.iotesters.{Driver, PeekPokeTester}
+import chiseltest._
+import scala.util.Random
+import org.scalatest.flatspec.AnyFlatSpec
 
-class CPUTester(c: CPU) extends PeekPokeTester(c) {
-  // 初始化复位信号
-  poke(c.io.rst, true.B)
-  step(1)
-  poke(c.io.rst, false.B)
+class CPUTester extends AnyFlatSpec with ChiselScalatestTester{
+    "Waveform" should "pass" in {
+        test (new CPU).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+            c=> {
+                  c.clock.step(60)
 
-  // 测试 CPU 各个信号和模块是否正确连接并工作
-  // ...
-}
-
-object CPUTester extends App {
-  Driver.execute(Array("--generate-vcd-output", "on"), () => new CPU) {
-    c => new CPUTester(c)
-  }
+                }
+        }
+    }
 }

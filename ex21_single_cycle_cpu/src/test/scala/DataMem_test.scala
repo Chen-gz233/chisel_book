@@ -1,34 +1,38 @@
 import chisel3._
-import chisel3.iotesters.{Driver, PeekPokeTester}
+import chiseltest._
+import scala.util.Random
+import org.scalatest.flatspec.AnyFlatSpec
 
-class DataMemTester(c: DataMem) extends PeekPokeTester(c) {
-  // 测试写入32位数据
-  poke(c.io.write_mem, "b01".U)
-  poke(c.io.address, 0.U)
-  poke(c.io.write_data, "hDEADBEEF".U)
-  step(1)
-  
-  // 测试读取32位数据
-  poke(c.io.read_mem, "b001".U)
-  poke(c.io.address, 0.U)
-  expect(c.io.out_mem, "hDEADBEEF".U)
-  
-  // 测试写入16位数据
-  poke(c.io.write_mem, "b10".U)
-  poke(c.io.address, 4.U)
-  poke(c.io.write_data, "hBEEF".U)
-  step(1)
-  
-  // 测试读取16位数据
-  poke(c.io.read_mem, "b010".U)
-  poke(c.io.address, 4.U)
-  expect(c.io.out_mem, "h0000BEEF".U)
-  
-  // 更多测试...
+class DataMemTester extends AnyFlatSpec with ChiselScalatestTester{
+    "Waveform" should "pass" in {
+        test (new DataMem).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+            c=> {
+
+                    // 测试写入32位数据
+                    c.io.write_mem.poke( "b01".U)
+                    c.io.address.poke( 0.U)
+                    c.io.write_data.poke("hDEADBEEF".U)
+                    c.clock.step(1)
+                    
+                    // 测试读取32位数据
+                    c.io.read_mem.poke( "b001".U)
+                    c.io.address.poke(0.U)
+                    c.io.out_mem.expect( "hDEADBEEF".U)
+                    
+                    // 测试写入16位数据
+                    c.io.write_mem.poke( "b10".U)
+                    c.io.address.poke( 4.U)
+                    c.io.write_data.poke("hBEEF".U)
+                     c.clock.step(1)
+                    
+                    // 测试读取16位数据
+                    c.io.read_mem.poke( "b010".U)
+                    c.io.address.poke( 4.U)
+                    c.io.out_mem.expect( "h0000BEEF".U)
+                    
+
+                  }
+        }
+    }
 }
 
-object DataMemTester extends App {
-  Driver.execute(Array("--generate-vcd-output", "on"), () => new DataMem) {
-    c => new DataMemTester(c)
-  }
-}

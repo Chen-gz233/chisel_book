@@ -3,8 +3,8 @@ import chisel3.util._
 
 class DataMem extends Module {
   val io = IO(new Bundle {
-    val clk = Input(Clock())           // 时钟信号
-    val rst = Input(Bool())            // 复位信号
+    // val clk = Input(Clock())           // 时钟信号
+    // val rst = Input(Bool())            // 复位信号
     val write_mem = Input(UInt(2.W))   // 写入内存控制信号
     val read_mem = Input(UInt(3.W))    // 读取内存控制信号
     val address = Input(UInt(32.W))    // 地址信号

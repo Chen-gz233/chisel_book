@@ -1,24 +1,28 @@
 import chisel3._
-import chisel3.iotesters.{Driver, PeekPokeTester}
+import chiseltest._
+import scala.util.Random
+import org.scalatest.flatspec.AnyFlatSpec
 
-class IMMTester(c: IMM) extends PeekPokeTester(c) {
-  // 测试I型指令立即数
-  poke(c.io.instr, "h00000093".U) // 指令：addi x1, x0, 0
-  poke(c.io.extOP, "b000".U)
-  step(1)
-  expect(c.io.imm_32, "h00000000".U)
+class IMMTester extends AnyFlatSpec with ChiselScalatestTester{
+    "Waveform" should "pass" in {
+        test (new IMM).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+            dut=> {
+                    // dut.clock.step(1)
+                    // dut.io.read_rs1_data.expect( 0.U)
+                    // dut.io.read_rs2_data.expect( 0.U)
+                    // 测试I型指令立即数
+                    dut.io.instr.poke("h00000093".U) // 指令：addi x1, x0, 0
+                    dut.io.extOP.poke("b000".U)
+                    dut.clock.step(1)
+                    dut.io.imm_32.expect("h00000000".U)
 
-  // 测试U型指令立即数
-  poke(c.io.instr, "h000000b7".U) // 指令：lui x1, 0
-  poke(c.io.extOP, "b001".U)
-  step(1)
-  expect(c.io.imm_32, "h00000000".U)
+                    // 测试U型指令立即数
+                    dut.io.instr.poke("h000000b7".U) // 指令：lui x1, 0
+                    dut.io.extOP.poke("b001".U)
+                    dut.clock.step(1)
+                    dut.io.imm_32.expect("h00000000".U)
 
-  // 更多测试...
-}
-
-object IMMTester extends App {
-  Driver.execute(Array("--generate-vcd-output", "on"), () => new IMM) {
-    c => new IMMTester(c)
-  }
+                  }
+        }
+    }
 }

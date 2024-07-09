@@ -1,26 +1,30 @@
 import chisel3._
-import chisel3.iotesters.{Driver, PeekPokeTester}
+import chiseltest._
+import scala.util.Random
+import org.scalatest.flatspec.AnyFlatSpec
 
-class ALUTester(c: ALU) extends PeekPokeTester(c) {
-  // 测试加法
-  poke(c.io.aluc, "b00000".U)
-  poke(c.io.a, 10.U)
-  poke(c.io.b, 32.U)
-  step(1)
-  expect(c.io.out, 42.U)
+class ALUTester extends AnyFlatSpec with ChiselScalatestTester{
+    "Waveform" should "pass" in {
+        test (new ALU).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+            c=> {
 
-  // 测试减法
-  poke(c.io.aluc, "b00001".U)
-  poke(c.io.a, 42.U)
-  poke(c.io.b, 32.U)
-  step(1)
-  expect(c.io.out, 10.U)
+                    // 测试加法
+                    c.io.aluc.poke("b00000".U)
+                    c.io.a.poke(10.U)
+                    c.io.b.poke(32.U)
+                    c.clock.step(1)
+                    c.io.out.expect( 42.U)
 
-  // 更多测试...
+                    // 测试减法
+                    c.io.aluc.poke("b00001".U)
+                    c.io.a.poke(42.U)
+                    c.io.b.poke( 32.U)
+                    c.clock.step(1)
+                    c.io.out.expect(10.U)
+
+
+                  }
+        }
+    }
 }
 
-object ALUTester extends App {
-  Driver.execute(Array("--generate-vcd-output", "on"), () => new ALU) {
-    c => new ALUTester(c)
-  }
-}

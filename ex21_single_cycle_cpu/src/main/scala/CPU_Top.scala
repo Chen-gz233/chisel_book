@@ -2,10 +2,10 @@ import chisel3._
 import chisel3.util._
 
 class CPU extends Module {
-  val io = IO(new Bundle {
-    val clk = Input(Clock()) // 时钟信号
-    val rst = Input(Bool())  // 复位信号
-  })
+  // val io = IO(new Bundle {
+  //   val clk = Input(Clock()) // 时钟信号
+  //   val rst = Input(Bool())  // 复位信号
+  // })
 
   // 子模块实例化
   val pc = Module(new PC)
@@ -22,8 +22,8 @@ class CPU extends Module {
   val nextPC = Module(new NextPC)
 
   // PC 模块连接
-  pc.io.rst := io.rst
-  pc.io.clk := io.clk
+  // pc.io.rst := io.rst
+  // pc.io.clk := io.clk
   pc.io.next_pc := nextPC.io.next_pc
 
   // Instruction Memory 连接
@@ -42,8 +42,8 @@ class CPU extends Module {
   imm.io.extOP := controller.io.extOP
 
   // Register File 连接
-  regFile.io.rst := io.rst
-  regFile.io.clk := io.clk
+  // regFile.io.rst := io.rst
+  // regFile.io.clk := io.clk
   regFile.io.write_reg := controller.io.write_reg
   regFile.io.rs1 := id.io.rs1
   regFile.io.rs2 := id.io.rs2
@@ -66,8 +66,8 @@ class CPU extends Module {
   alu.io.b := muxEXB.io.out
 
   // Data Memory 连接
-  dataMem.io.clk := io.clk
-  dataMem.io.rst := io.rst
+  // dataMem.io.clk := io.clk
+  // dataMem.io.rst := io.rst
   dataMem.io.address := alu.io.out
   dataMem.io.write_data := regFile.io.read_rs2_data
   dataMem.io.write_mem := controller.io.write_mem

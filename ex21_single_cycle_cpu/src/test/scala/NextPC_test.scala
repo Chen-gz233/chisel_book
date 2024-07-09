@@ -1,40 +1,43 @@
 import chisel3._
-import chisel3.iotesters.{Driver, PeekPokeTester}
+import chiseltest._
+import scala.util.Random
+import org.scalatest.flatspec.AnyFlatSpec
 
-class NextPCTester(c: NextPC) extends PeekPokeTester(c) {
-  // 测试顺序执行
-  poke(c.io.pc, 4.U)
-  poke(c.io.pcImm_NEXTPC_rs1Imm, 0.U)
-  poke(c.io.condition_branch, false.B)
-  step(1)
-  expect(c.io.next_pc, 8.U)
+class NextPCTester extends AnyFlatSpec with ChiselScalatestTester{
+    "Waveform" should "pass" in {
+        test (new NextPC).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+            dut=> {
+                    // 测试顺序执行
+                    dut.io.pc.poke( 4.U)
+                    dut.io.pcImm_NEXTPC_rs1Imm.poke( 0.U)
+                    dut.io.condition_branch.poke( false.B)
+                    dut.clock.step(1)
+                    dut.io.next_pc.expect( 8.U)
 
-  // 测试使用 pc + offset 计算下一条指令地址
-  poke(c.io.pc, 4.U)
-  poke(c.io.pcImm_NEXTPC_rs1Imm, 1.U)
-  poke(c.io.offset, 8.U)
-  step(1)
-  expect(c.io.next_pc, 12.U)
+                    // 测试使用 pc + offset 计算下一条指令地址
+                    dut.io.pc.poke( 4.U)
+                    dut.io.pcImm_NEXTPC_rs1Imm.poke( 1.U)
+                    dut.io.offset.poke( 8.U)
+                    dut.clock.step(1)
+                    dut.io.next_pc.expect( 12.U)
 
-  // 测试使用 rs1Data + offset 计算下一条指令地址
-  poke(c.io.pc, 4.U)
-  poke(c.io.pcImm_NEXTPC_rs1Imm, 2.U)
-  poke(c.io.rs1Data, 10.U)
-  poke(c.io.offset, 5.U)
-  step(1)
-  expect(c.io.next_pc, 15.U)
+                    // 测试使用 rs1Data + offset 计算下一条指令地址
+                    dut.io.pc.poke( 4.U)
+                    dut.io.pcImm_NEXTPC_rs1Imm.poke( 2.U)
+                    dut.io.rs1Data.poke( 10.U)
+                    dut.io.offset.poke( 5.U)
+                    dut.clock.step(1)
+                    dut.io.next_pc.expect( 15.U)
 
-  // 测试条件分支
-  poke(c.io.pc, 4.U)
-  poke(c.io.pcImm_NEXTPC_rs1Imm, 0.U)
-  poke(c.io.condition_branch, true.B)
-  poke(c.io.offset, 8.U)
-  step(1)
-  expect(c.io.next_pc, 12.U)
+                    // 测试条件分支
+                    dut.io.pc.poke( 4.U)
+                    dut.io.pcImm_NEXTPC_rs1Imm.poke( 0.U)
+                    dut.io.condition_branch.poke( true.B)
+                    dut.io.offset.poke( 8.U)
+                    dut.clock.step(1)
+                    dut.io.next_pc.expect( 12.U)
+                  }
+        }
+    }
 }
 
-object NextPCTester extends App {
-  Driver.execute(Array("--generate-vcd-output", "on"), () => new NextPC) {
-    c => new NextPCTester(c)
-  }
-}

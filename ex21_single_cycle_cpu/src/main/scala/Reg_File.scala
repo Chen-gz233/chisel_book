@@ -3,8 +3,6 @@ import chisel3.util._
 
 class RegFile extends Module {
   val io = IO(new Bundle {
-    val rst = Input(Bool())          // 复位信号
-    val clk = Input(Clock())         // 时钟信号
     val write_reg = Input(Bool())    // 写寄存器使能信号
     val rs1 = Input(UInt(5.W))       // 源寄存器1地址
     val rs2 = Input(UInt(5.W))       // 源寄存器2地址
@@ -15,7 +13,7 @@ class RegFile extends Module {
     val read_rs2_data = Output(UInt(32.W))// 读取源寄存器2的数据
   })
 
-  // 定义32个32位寄存器
+  // 定义32个32位寄存器组
   val regs = RegInit(VecInit(Seq.fill(32)(0.U(32.W))))
   
   // 初始化寄存器x2为128

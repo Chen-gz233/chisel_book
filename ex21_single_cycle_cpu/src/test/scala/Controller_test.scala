@@ -1,28 +1,30 @@
 import chisel3._
-import chisel3.iotesters.{Driver, PeekPokeTester}
+import chiseltest._
+import scala.util.Random
+import org.scalatest.flatspec.AnyFlatSpec
 
-class ControllerTester(c: Controller) extends PeekPokeTester(c) {
-  // 测试R型指令
-  poke(c.io.opcode, "b0110011".U)
-  poke(c.io.func3, "b000".U)
-  poke(c.io.func7, "b0000000".U)
-  step(1)
-  expect(c.io.write_reg, true.B)
-  expect(c.io.rs2Data_EX_imm32_4, "b00".U)
-  expect(c.io.aluc, "b00000".U)
+class ControllerTester extends AnyFlatSpec with ChiselScalatestTester{
+    "Waveform" should "pass" in {
+        test (new Controller).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+            c=> {
+                  // 测试R型指令
+                  c.io.opcode.poke( "b0110011".U)
+                  c.io.func3.poke( "b000".U)
+                  c.io.func7.poke( "b0000000".U)
+                  c.clock.step(1)
+                  c.io.write_reg.expect( true.B)
+                  c.io.rs2Data_EX_imm32_4.expect( "b00".U)
+                  c.io.aluc.expect( "b00000".U)
 
-  // 测试I型指令
-  poke(c.io.opcode, "b0010011".U)
-  poke(c.io.func3, "b000".U)
-  poke(c.io.func7, "b0000000".U)
-  step(1)
-  expect(c.io.write_reg, true.B)
-  expect(c.io.rs2Data_EX_imm32_4, "b01".U)
-  expect(c.io.aluc, "b00000".U)
-}
-
-object ControllerTester extends App {
-  Driver.execute(Array("--generate-vcd-output", "on"), () => new Controller) {
-    c => new ControllerTester(c)
-  }
+                  // 测试I型指令
+                  c.io.opcode.poke( "b0010011".U)
+                  c.io.func3.poke("b000".U)
+                  c.io.func7.poke( "b0000000".U)
+                  c.clock.step(1)
+                  c.io.write_reg.expect( true.B)
+                  c.io.rs2Data_EX_imm32_4.expect( "b01".U)
+                  c.io.aluc.expect("b00000".U)
+                }
+        }
+    }
 }
