@@ -73,7 +73,7 @@ class Controller extends Module {
         }
       }
     }
-    is("b0000011".U) { // Load指令
+    is("b0000011".U) { // I型指令 (Load)
       io.write_valid := true.B
       io.read_code := "b001".U
       io.alu2_rs2Data_or_imm32_or_4 := "b01".U
