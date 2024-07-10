@@ -3,18 +3,10 @@ import chiseltest._
 import scala.util.Random
 import org.scalatest.flatspec.AnyFlatSpec
 
-class InstructionMemTester extends AnyFlatSpec with ChiselScalatestTester{
+class Instruction_CacheTester extends AnyFlatSpec with ChiselScalatestTester{
     "Waveform" should "pass" in {
-        test (new InstructionMem).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+        test (new Instruction_Cache).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
             dut=> {
-                // // 测试信号为0时的情况
-                // dut.io.signal.poke(false.B)
-                // dut.clock.step()
-                // dut.io.a.poke(42.U)
-                // dut.io.b.poke(84.U)
-                // dut.clock.step()
-                // print("io.out = ",dut.io.out.peek().toString)
-                // dut.clock.step(5)
                 // 测试读取指令
                   for (i <- 0 until 13) {
                     dut.io.pc.poke( i * 4)

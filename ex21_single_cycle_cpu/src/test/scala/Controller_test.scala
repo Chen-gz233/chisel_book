@@ -12,18 +12,18 @@ class ControllerTester extends AnyFlatSpec with ChiselScalatestTester{
                   c.io.func3.poke( "b000".U)
                   c.io.func7.poke( "b0000000".U)
                   c.clock.step(1)
-                  c.io.write_reg.expect( true.B)
-                  c.io.rs2Data_EX_imm32_4.expect( "b00".U)
-                  c.io.aluc.expect( "b00000".U)
+                  c.io.write_valid.expect( true.B)
+                  c.io.alu2_rs2Data_or_imm32_or_4.expect( "b00".U)
+                  c.io.alu_code.expect( "b00000".U)
 
                   // 测试I型指令
                   c.io.opcode.poke( "b0010011".U)
                   c.io.func3.poke("b000".U)
                   c.io.func7.poke( "b0000000".U)
                   c.clock.step(1)
-                  c.io.write_reg.expect( true.B)
-                  c.io.rs2Data_EX_imm32_4.expect( "b01".U)
-                  c.io.aluc.expect("b00000".U)
+                  c.io.write_valid.expect( true.B)
+                  c.io.alu2_rs2Data_or_imm32_or_4.expect( "b01".U)
+                  c.io.alu_code.expect("b00000".U)
                 }
         }
     }

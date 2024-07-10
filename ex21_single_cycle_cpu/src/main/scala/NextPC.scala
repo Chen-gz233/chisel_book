@@ -3,7 +3,7 @@ import chisel3.util._
 
 class NextPC extends Module {
   val io = IO(new Bundle {
-    val pcImm_NEXTPC_rs1Imm = Input(UInt(2.W)) // 控制信号
+    val nextPC_pc_or_rs1 = Input(UInt(2.W)) // 控制信号
     val condition_branch = Input(Bool())       // 条件分支信号
     val pc = Input(UInt(32.W))                 // 当前指令地址
     val offset = Input(UInt(32.W))             // 偏移量
@@ -14,9 +14,9 @@ class NextPC extends Module {
   // 默认情况下，next_pc 为 pc + 4（顺序执行）
   io.next_pc := io.pc + 4.U
 
-  when(io.pcImm_NEXTPC_rs1Imm === "b01".U) {
+  when(io.nextPC_pc_or_rs1 === "b01".U) {
     io.next_pc := io.pc + io.offset         // 使用 pc + offset 计算下一条指令地址
-  } .elsewhen(io.pcImm_NEXTPC_rs1Imm === "b10".U) {
+  } .elsewhen(io.nextPC_pc_or_rs1 === "b10".U) {
     io.next_pc := io.rs1Data + io.offset    // 使用 rs1Data + offset 计算下一条指令地址
   } .elsewhen(io.condition_branch) {
     io.next_pc := io.pc + io.offset         // 在条件满足时，使用 pc + offset 计算下一条指令地址

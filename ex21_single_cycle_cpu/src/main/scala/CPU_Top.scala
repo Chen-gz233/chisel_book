@@ -2,88 +2,90 @@ import chisel3._
 import chisel3.util._
 
 class CPU extends Module {
-  // val io = IO(new Bundle {
-  //   val clk = Input(Clock()) // 时钟信号
-  //   val rst = Input(Bool())  // 复位信号
-  // })
+  val io = IO(new Bundle {
+    val pc = Output(UInt(32.W))         // Tester_PC信号
+    val instr = Output(UInt(32.W))      // Tester_instr信号
+    val aluOut = Output(UInt(32.W))     // Tester_aluOut信号
+    val writeData = Output(UInt(32.W))  // Tester_writeData
+  })
 
   // 子模块实例化
-  val pc = Module(new PC)
-  val instructionMem = Module(new InstructionMem)
-  val id = Module(new ID)
+  val pc = Module(new PC) 
+  val instruction_cache = Module(new Instruction_Cache)
+  val instruction_decode = Module(new Instruction_Decode)
   val controller = Module(new Controller)
-  val imm = Module(new IMM)
-  val regFile = Module(new RegFile)
-  val muxWB = Module(new Mux2)
-  val muxEXB = Module(new Mux3)
-  val muxEXA = Module(new Mux2)
+  val immediate_generator = Module(new Immediate_Generator)
+  val reg_banks = Module(new Reg_Banks)
+  val mux_wb = Module(new Mux2)
+  val mux_alu2 = Module(new Mux3)
+  val mux_alu1 = Module(new Mux2)
   val alu = Module(new ALU)
-  val dataMem = Module(new DataMem)
+  val data_dache = Module(new Data_Cache)
   val nextPC = Module(new NextPC)
 
   // PC 模块连接
-  // pc.io.rst := io.rst
-  // pc.io.clk := io.clk
   pc.io.next_pc := nextPC.io.next_pc
 
-  // Instruction Memory 连接
-  instructionMem.io.pc := pc.io.pc
+  // Instruction Cache 连接
+  instruction_cache.io.pc := pc.io.pc
 
   // Instruction Decode 连接
-  id.io.instr := instructionMem.io.instruction
+  instruction_decode.io.instruction := instruction_cache.io.instruction
 
   // Controller 连接
-  controller.io.opcode := id.io.opcode
-  controller.io.func3 := id.io.func3
-  controller.io.func7 := id.io.func7
+  controller.io.opcode := instruction_decode.io.opcode
+  controller.io.func3 := instruction_decode.io.func3
+  controller.io.func7 := instruction_decode.io.func7
 
   // Immediate Generator 连接
-  imm.io.instr := instructionMem.io.instruction
-  imm.io.extOP := controller.io.extOP
+  immediate_generator.io.instruction := instruction_cache.io.instruction
+  immediate_generator.io.immediate_code := controller.io.immediate_code
 
-  // Register File 连接
-  // regFile.io.rst := io.rst
-  // regFile.io.clk := io.clk
-  regFile.io.write_reg := controller.io.write_reg
-  regFile.io.rs1 := id.io.rs1
-  regFile.io.rs2 := id.io.rs2
-  regFile.io.target_reg := id.io.rd
-  regFile.io.write_rd_data := muxWB.io.out
+  // Register Banks 连接
+  reg_banks.io.write_valid := controller.io.write_valid
+  reg_banks.io.rs1_address := instruction_decode.io.rs1_address
+  reg_banks.io.rs2_address := instruction_decode.io.rs2_address
+  reg_banks.io.rd_address := instruction_decode.io.rd_address
+  reg_banks.io.write_rd_data := mux_wb.io.out
 
   // ALU 输入多路选择器 连接
-  muxEXA.io.signal := controller.io.rs1Data_EX_PC
-  muxEXA.io.a := regFile.io.read_rs1_data
-  muxEXA.io.b := pc.io.pc
+  mux_alu1.io.signal := controller.io.alu1_rs1Data_or_PC
+  mux_alu1.io.a := reg_banks.io.read_rs1_data
+  mux_alu1.io.b := pc.io.pc
 
-  muxEXB.io.signal := controller.io.rs2Data_EX_imm32_4
-  muxEXB.io.a := regFile.io.read_rs2_data
-  muxEXB.io.b := imm.io.imm_32
-  muxEXB.io.c := 4.U
+  mux_alu2.io.signal := controller.io.alu1_rs1Data_or_PC
+  mux_alu2.io.a := reg_banks.io.read_rs2_data
+  mux_alu2.io.b := immediate_generator.io.immediate_32
+  mux_alu2.io.c := 4.U
 
   // ALU 连接
-  alu.io.aluc := controller.io.aluc
-  alu.io.a := muxEXA.io.out
-  alu.io.b := muxEXB.io.out
+  alu.io.alu_code := controller.io.alu_code
+  alu.io.a := mux_alu1.io.out
+  alu.io.b := mux_alu2.io.out
 
-  // Data Memory 连接
-  // dataMem.io.clk := io.clk
-  // dataMem.io.rst := io.rst
-  dataMem.io.address := alu.io.out
-  dataMem.io.write_data := regFile.io.read_rs2_data
-  dataMem.io.write_mem := controller.io.write_mem
-  dataMem.io.read_mem := controller.io.read_mem
+  // Data Cache 连接
+  data_dache.io.address := alu.io.out
+  data_dache.io.write_data := reg_banks.io.read_rs2_data
+  data_dache.io.write_code := controller.io.write_code
+  data_dache.io.read_code := controller.io.read_code
 
   // Write Back 多路选择器 连接
-  muxWB.io.signal := controller.io.aluOut_WB_memOut
-  muxWB.io.a := alu.io.out
-  muxWB.io.b := dataMem.io.out_mem
+  mux_wb.io.signal := controller.io.wb_aluOut_or_CacheOut
+  mux_wb.io.a := alu.io.out
+  mux_wb.io.b := data_dache.io.out_data
 
   // Next PC 模块连接
-  nextPC.io.pcImm_NEXTPC_rs1Imm := controller.io.pcImm_NEXTPC_rs1Imm
+  nextPC.io.nextPC_pc_or_rs1 := controller.io.nextPC_pc_or_rs1
   nextPC.io.condition_branch := alu.io.condition_branch
   nextPC.io.pc := pc.io.pc
-  nextPC.io.offset := imm.io.imm_32
-  nextPC.io.rs1Data := regFile.io.read_rs1_data
+  nextPC.io.offset := immediate_generator.io.immediate_32
+  nextPC.io.rs1Data := reg_banks.io.read_rs1_data
+
+  // 将PC模块的pc信号连接到CPU模块的io接口
+  io.pc := pc.io.pc
+  io.instr := instruction_cache.io.instruction
+  io.aluOut := alu.io.out
+  io.writeData := reg_banks.io.write_rd_data
 }
 
 object CPU extends App {

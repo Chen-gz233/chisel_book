@@ -1,15 +1,21 @@
 import chisel3._
 import chisel3.util._
 
-class InstructionMem extends Module {
+class Instruction_Cache extends Module {
   val io = IO(new Bundle {
     val pc = Input(UInt(32.W))       // 当前指令地址
     val instruction = Output(UInt(32.W)) // 当前指令
   })
 
-  val instMem = VecInit(Seq(
-    "hfe010113".U(32.W),      // addi sp, sp, -32
-    "h00812e23".U(32.W),      // sw s0, 28(sp)
+  val Inst_Cache = VecInit(Seq(
+    //111111100000_00010_000_00010_0010011
+    //imm[11:0]    rs1   000  rd   0010011
+    //addi rd,rs1,imm
+    "hfe010113".U(32.W),      // addi sp, sp, -32 
+
+    //0000000_01000_00010_010_11100_0100011
+    "h00812e23".U(32.W),      // sw(store word) s0, 28(sp)
+    
     "h02010413".U(32.W),      // addi s0, sp, 32
     "hfea42623".U(32.W),      // sw a0, -20(s0)
     "hfec42783".U(32.W),      // lw a5, -20(s0)
@@ -42,10 +48,10 @@ class InstructionMem extends Module {
 
   ))
 
-  io.instruction := instMem(io.pc >> 2) // 取指令地址的高位部分
+  io.instruction := Inst_Cache(io.pc >> 2) // 取指令地址的高位部分
 
 }
 
-object InstructionMem extends App {
-  emitVerilog(new InstructionMem(),Array("--target-dir","generate"))
+object Instruction_Cache extends App {
+  emitVerilog(new Instruction_Cache(),Array("--target-dir","generate"))
 }
