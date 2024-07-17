@@ -59,7 +59,7 @@ class CPU extends Module {
   mux_alu2.io.c := 4.U
 
   // ALU 连接
-  alu.io.alu_code := controller.io.alu_code
+  alu.io.alu_ctr := controller.io.alu_ctr
   alu.io.a := mux_alu1.io.out
   alu.io.b := mux_alu2.io.out
 

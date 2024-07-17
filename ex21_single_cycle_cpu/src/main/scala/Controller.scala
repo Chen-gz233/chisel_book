@@ -7,7 +7,7 @@ class Controller extends Module {
     val func3                = Input(UInt(3.W))
     val func7                = Input(UInt(7.W))
 
-    val alu_code                     = Output(UInt(5.W))  // ALU Control
+    val alu_ctr                      = Output(UInt(5.W))  // ALU Control
     val wb_aluOut_or_CacheOut        = Output(Bool())     //Write Back  alu or cache
     val alu1_rs1Data_or_PC           = Output(Bool())     //ALU 选择操作第一个数 rs1 or pc
     val alu2_rs2Data_or_imm32_or_4   = Output(UInt(2.W))  //ALU 选择操作第二个数 rs1 or 立即数 or 4
@@ -19,7 +19,7 @@ class Controller extends Module {
   })
 
   // 默认值设置为0
-  io.alu_code := 0.U
+  io.alu_ctr := 0.U
   io.wb_aluOut_or_CacheOut := false.B
   io.alu1_rs1Data_or_PC := false.B
   io.alu2_rs2Data_or_imm32_or_4 := 0.U
@@ -37,20 +37,20 @@ class Controller extends Module {
       switch(io.func3) {
         is("b000".U) {
           when(io.func7 === "b0000000".U) {
-            io.alu_code := "b00000".U // ADD
+            io.alu_ctr := "b00000".U // ADD
           }.elsewhen(io.func7 === "b0100000".U) {
-            io.alu_code := "b00001".U // SUB
+            io.alu_ctr := "b00001".U // SUB
           }
         }
-        is("b111".U) { io.alu_code := "b00010".U } // AND
-        is("b110".U) { io.alu_code := "b00011".U } // OR
-        is("b100".U) { io.alu_code := "b00100".U } // XOR
-        is("b001".U) { io.alu_code := "b00101".U } // SLL
+        is("b111".U) { io.alu_ctr := "b00010".U } // AND
+        is("b110".U) { io.alu_ctr := "b00011".U } // OR
+        is("b100".U) { io.alu_ctr := "b00100".U } // XOR
+        is("b001".U) { io.alu_ctr := "b00101".U } // SLL
         is("b101".U) {
           when(io.func7 === "b0000000".U) {
-            io.alu_code := "b01000".U // SRL
+            io.alu_ctr := "b01000".U // SRL
           }.elsewhen(io.func7 === "b0100000".U) {
-            io.alu_code := "b01001".U // SRA
+            io.alu_ctr := "b01001".U // SRA
           }
         }
       }
@@ -59,16 +59,16 @@ class Controller extends Module {
       io.write_valid := true.B
       io.alu2_rs2Data_or_imm32_or_4 := "b01".U
       switch(io.func3) {
-        is("b000".U) { io.alu_code := "b00000".U } // ADDI
-        is("b111".U) { io.alu_code := "b00010".U } // ANDI
-        is("b110".U) { io.alu_code := "b00011".U } // ORI
-        is("b100".U) { io.alu_code := "b00100".U } // XORI
-        is("b001".U) { io.alu_code := "b00101".U } // SLLI
+        is("b000".U) { io.alu_ctr := "b00000".U } // ADDI
+        is("b111".U) { io.alu_ctr := "b00010".U } // ANDI
+        is("b110".U) { io.alu_ctr := "b00011".U } // ORI
+        is("b100".U) { io.alu_ctr := "b00100".U } // XORI
+        is("b001".U) { io.alu_ctr := "b00101".U } // SLLI
         is("b101".U) {
           when(io.func7 === "b0000000".U) {
-            io.alu_code := "b01000".U // SRLI
+            io.alu_ctr := "b01000".U // SRLI
           }.elsewhen(io.func7 === "b0100000".U) {
-            io.alu_code := "b01001".U // SRAI
+            io.alu_ctr := "b01001".U // SRAI
           }
         }
       }
@@ -77,16 +77,16 @@ class Controller extends Module {
       io.write_valid := true.B
       io.read_code := "b001".U
       io.alu2_rs2Data_or_imm32_or_4 := "b01".U
-      io.alu_code := "b00000".U // ADD
+      io.alu_ctr := "b00000".U // ADD
     }
     is("b0100011".U) { // S型指令 (Store)
       io.write_code := "b01".U
       io.alu2_rs2Data_or_imm32_or_4 := "b01".U
-      io.alu_code := "b00000".U // ADD
+      io.alu_ctr := "b00000".U // ADD
     }
     is("b1100011".U) { // B型指令 (Branch)
       io.nextPC_pc_or_rs1 := "b01".U
-      io.alu_code := "b00001".U // SUB
+      io.alu_ctr := "b00001".U // SUB
       switch(io.func3) {
         is("b000".U) { io.wb_aluOut_or_CacheOut := true.B } // BEQ
         is("b001".U) { io.wb_aluOut_or_CacheOut := true.B } // BNE

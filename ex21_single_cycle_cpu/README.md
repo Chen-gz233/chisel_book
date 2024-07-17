@@ -5,6 +5,9 @@
 
   https://nju-projectn.github.io/dlco-lecture-note/index.html
 
+  https://blog.csdn.net/heyangge/article/details/134502174
+
+  CPU数据通路中的三个重要部分：**寄存器堆**、**ALU**和**数据存储器**，并通过功能仿真测试。
 # RISC-V指令的特点
     R-type：寄存器与寄存器算术指令，这里的R就是register寄存器的意思；
     I-type：寄存器与立即数算术指令或者加载指令；
