@@ -14,25 +14,25 @@ class IfIdTest extends AnyFlatSpec with ChiselScalatestTester{
       dut.io.pause.poke(false.B)
       dut.io.flush.poke(false.B)
       dut.io.if_pc.poke(100.U)
-      dut.io.if_instr.poke("h02010413".U)
+      dut.io.if_instruction.poke("h02010413".U)
       dut.clock.step()
       dut.io.id_pc.expect(100.U)
-      dut.io.id_instr.expect("h02010413".U)
+      dut.io.id_instruction.expect("h02010413".U)
 
       // Test case 3: Pause
       dut.io.pause.poke(true.B)
       dut.io.if_pc.poke(200.U)
-      dut.io.if_instr.poke("h00112e23".U)
+      dut.io.if_instruction.poke("h00112e23".U)
       dut.clock.step()
       dut.io.id_pc.expect(100.U) // PC should not update
-      dut.io.id_instr.expect("h02010413".U) // Instruction should not update
+      dut.io.id_instruction.expect("h02010413".U) // Instruction should not update
 
       // Test case 4: Flush
       dut.io.pause.poke(false.B)
       dut.io.flush.poke(true.B)
       dut.clock.step()
       dut.io.id_pc.expect(0.U)
-      dut.io.id_instr.expect("h00000013".U) // NOP instruction
+      dut.io.id_instruction.expect("h00000013".U) // NOP instruction
     }
   }
 }

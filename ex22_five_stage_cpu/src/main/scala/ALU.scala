@@ -3,14 +3,14 @@ import chisel3.util._
 
 class ALU extends Module {
   val io = IO(new Bundle {
-    val alu_ctr = Input(UInt(5.W))          // ALU控制信号
-    val a = Input(UInt(32.W))            // ALU的第一个输入操作数
-    val b = Input(UInt(32.W))            // ALU的第二个输入操作数
-    val out = Output(UInt(32.W))         // ALU的输出结果
-    val condition_branch = Output(Bool()) // 条件分支信号
+    val alu_ctr           = Input(UInt(5.W))             // ALU控制信号
+    val a                 = Input(UInt(32.W))            // ALU的第一个输入操作数
+    val b                 = Input(UInt(32.W))            // ALU的第二个输入操作数
+    val out               = Output(UInt(32.W))           // ALU的输出结果
+    val condition_branch  = Output(Bool())               // 条件分支信号
   })
 
-  io.out := 0.U                          // 默认输出值
+  io.out              := 0.U                          // 默认输出值
   io.condition_branch := false.B         // 默认条件分支信号
 
   switch(io.alu_ctr) {

@@ -3,8 +3,8 @@ import chisel3.util._
 
 class Instruction_Cache extends Module {
   val io = IO(new Bundle {
-    val pc = Input(UInt(32.W))       // 当前指令地址
-    val instruction = Output(UInt(32.W)) // 当前指令
+    val pc          = Input(UInt(32.W))       // 当前指令地址
+    val instruction = Output(UInt(32.W))      // 当前指令
   })
 
   val Inst_Cache = VecInit(Seq(

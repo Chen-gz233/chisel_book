@@ -1,0 +1,102 @@
+import chisel3._
+import chiseltest._
+import scala.util.Random
+import org.scalatest.flatspec.AnyFlatSpec
+
+
+class IdExTest   extends AnyFlatSpec with ChiselScalatestTester{
+    "Waveform" should "pass" in {
+        test (new ID_to_EX).withAnnotations(Seq(WriteVcdAnnotation)){//WriteVcdAnnotation
+        dut =>
+
+               // Test case 2: Normal operation
+                dut.io.pause.poke(false.B)
+                dut.io.flush.poke(false.B)
+                dut.io.id_alu_ctr.poke("b01010".U)
+                dut.io.id_wb_aluOut_or_CacheOut.poke(true.B)
+                dut.io.id_rs1Data_or_PC.poke(true.B)
+                dut.io.id_rs2Data_or_imm32_or_4.poke(3.U)
+                dut.io.id_write_valid.poke(false.B)
+                dut.io.id_write_code.poke(2.U)
+                dut.io.id_read_code.poke(1.U)
+                dut.io.id_nextPC_pc_or_rs1.poke(1.U)
+                dut.io.id_pc.poke(100.U)
+                dut.io.id_rs1Data.poke(200.U)
+                dut.io.id_rs2Data.poke(300.U)
+                dut.io.id_imm32.poke(400.U)
+                dut.io.id_rd_address.poke(5.U)
+                dut.io.id_rs1_address.poke(10.U)
+                dut.io.id_rs2_address.poke(15.U)
+                dut.clock.step()
+                dut.io.ex_alu_ctr.expect("b01010".U)
+                dut.io.ex_wb_aluOut_or_CacheOut.expect(true.B)
+                dut.io.ex_rs1Data_or_PC.expect(true.B)
+                dut.io.ex_rs2Data_or_imm32_or_4.expect(3.U)
+                dut.io.ex_write_valid.expect(false.B)
+                dut.io.ex_write_code.expect(2.U)
+                dut.io.ex_read_code.expect(1.U)
+                dut.io.ex_nextPC_pc_or_rs1.expect(1.U)
+                dut.io.ex_pc.expect(100.U)
+                dut.io.ex_rs1Data.expect(200.U)
+                dut.io.ex_rs2Data.expect(300.U)
+                dut.io.ex_imm32.expect(400.U)
+                dut.io.ex_rd_address.expect(5.U)
+                dut.io.ex_rs1_address.expect(10.U)
+                dut.io.ex_rs2_address.expect(15.U)
+
+                // Test case 3: Pause
+                dut.io.pause.poke(true.B)
+                dut.io.id_alu_ctr.poke("b11111".U)
+                dut.io.id_wb_aluOut_or_CacheOut.poke(false.B)
+                dut.io.id_rs1Data_or_PC.poke(false.B)
+                dut.io.id_rs2Data_or_imm32_or_4.poke(0.U)
+                dut.io.id_write_valid.poke(true.B)
+                dut.io.id_write_code.poke(0.U)
+                dut.io.id_read_code.poke(0.U)
+                dut.io.id_nextPC_pc_or_rs1.poke(0.U)
+                dut.io.id_pc.poke(0.U)
+                dut.io.id_rs1Data.poke(0.U)
+                dut.io.id_rs2Data.poke(0.U)
+                dut.io.id_imm32.poke(0.U)
+                dut.io.id_rd_address.poke(0.U)
+                dut.io.id_rs1_address.poke(0.U)
+                dut.io.id_rs2_address.poke(0.U)
+                dut.clock.step()
+                dut.io.ex_alu_ctr.expect("b00000".U)
+                dut.io.ex_wb_aluOut_or_CacheOut.expect(false.B)
+                dut.io.ex_rs1Data_or_PC.expect(false.B)
+                dut.io.ex_rs2Data_or_imm32_or_4.expect(1.U)
+                dut.io.ex_write_valid.expect(true.B)
+                dut.io.ex_write_code.expect(0.U)
+                dut.io.ex_read_code.expect(0.U)
+                dut.io.ex_nextPC_pc_or_rs1.expect(0.U)
+                dut.io.ex_pc.expect(0.U)
+                dut.io.ex_rs1Data.expect(0.U)
+                dut.io.ex_rs2Data.expect(0.U)
+                dut.io.ex_imm32.expect(0.U)
+                dut.io.ex_rd_address.expect(0.U)
+                dut.io.ex_rs1_address.expect(0.U)
+                dut.io.ex_rs2_address.expect(0.U)
+
+                // Test case 4: Flush
+                dut.io.pause.poke(false.B)
+                dut.io.flush.poke(true.B)
+                dut.clock.step()
+                dut.io.ex_alu_ctr.expect(0.U)
+                dut.io.ex_wb_aluOut_or_CacheOut.expect(false.B)
+                dut.io.ex_rs1Data_or_PC.expect(false.B)
+                dut.io.ex_rs2Data_or_imm32_or_4.expect(1.U)
+                dut.io.ex_write_valid.expect(true.B)
+                dut.io.ex_write_code.expect(0.U)
+                dut.io.ex_read_code.expect(0.U)
+                dut.io.ex_nextPC_pc_or_rs1.expect(0.U)
+                dut.io.ex_pc.expect(0.U)
+                dut.io.ex_rs1Data.expect(0.U)
+                dut.io.ex_rs2Data.expect(0.U)
+                dut.io.ex_imm32.expect(0.U)
+                dut.io.ex_rd_address.expect(0.U)
+                dut.io.ex_rs1_address.expect(0.U)
+                dut.io.ex_rs2_address.expect(0.U)
+          }
+  }
+}

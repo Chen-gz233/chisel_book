@@ -13,11 +13,11 @@ class Data_Cache extends Module {
   
     //根据地址的低2位选择合适的数据拼接扩展成写的结果
     
-    val write_code = Input(UInt(2.W))   // 写入cache控制信号  （写操作的大小（字节、半字或字）） 
-    val read_code = Input(UInt(3.W))    // 读取cache控制信号   读操作的大小（字节、半字、字、符号扩展或零扩展）
-    val address = Input(UInt(32.W))    // 地址
-    val write_data = Input(UInt(32.W)) // 写入数据
-    val out_data = Output(UInt(32.W))   // 输出数据
+    val write_code  = Input(UInt(2.W))   // 写入cache控制信号  （写操作的大小（字节、半字或字）） 
+    val read_code   = Input(UInt(3.W))    // 读取cache控制信号   读操作的大小（字节、半字、字、符号扩展或零扩展）
+    val address     = Input(UInt(32.W))    // 地址
+    val write_data  = Input(UInt(32.W)) // 写入数据
+    val out_data    = Output(UInt(32.W))   // 输出数据
   })
 
   // 定义数据存储器，双端口RAM（RAM 2 PORT） 128字节
@@ -25,6 +25,7 @@ class Data_Cache extends Module {
 
   // 异步读取操作
   io.out_data := 0.U
+  
   switch(io.read_code(1,0)) {
     is("b00".U) {
       io.out_data := 0.U
@@ -46,15 +47,15 @@ class Data_Cache extends Module {
 
   // 同步写入操作
   when(io.write_code === "b01".U) {
-    data(io.address + 3.U) := io.write_data(31, 24)
-    data(io.address + 2.U) := io.write_data(23, 16)
-    data(io.address + 1.U) := io.write_data(15, 8)
+    data(io.address + 3.U)  := io.write_data(31, 24)
+    data(io.address + 2.U)  := io.write_data(23, 16)
+    data(io.address + 1.U)  := io.write_data(15, 8)
     data(io.address) := io.write_data(7, 0)
   } .elsewhen(io.write_code === "b10".U) {
-    data(io.address + 1.U) := io.write_data(15, 8)
-    data(io.address) := io.write_data(7, 0)
+    data(io.address + 1.U)  := io.write_data(15, 8)
+    data(io.address)        := io.write_data(7, 0)
   } .elsewhen(io.write_code === "b11".U) {
-    data(io.address) := io.write_data(7, 0)
+    data(io.address)        := io.write_data(7, 0)
   }
 }
 
